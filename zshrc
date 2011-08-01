@@ -1,1 +1,1 @@
- "~/.rvm/scripts/rvm" ]] && source "~/.rvm/scripts/rvm"
+"$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
