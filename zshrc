@@ -1,1 +1,1 @@
- "/Users/tbueno/.rvm/scripts/rvm" ]] && source "/Users/tbueno/.rvm/scripts/rvm"
+ "~/.rvm/scripts/rvm" ]] && source "~/.rvm/scripts/rvm"
