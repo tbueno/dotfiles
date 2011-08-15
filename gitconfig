@@ -24,3 +24,5 @@
 [user]
 	name = Thiago Bueno
 	email = tbueno@tbueno.com
+[core]
+	excludefile = ~/.gitignore
