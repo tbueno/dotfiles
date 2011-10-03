@@ -1,5 +1,6 @@
-# RVM loading instructions
-"$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#Temporary solution for RVM x GCC problen in LION
+export CC=/usr/bin/gcc-4.2
+[[ -s "/Users/tbueno/.rvm/scripts/rvm" ]] && source "/Users/tbueno/.rvm/scripts/rvm"
 
 #Autocomplete
 autoload -U compinit
@@ -25,3 +26,22 @@ export PATH=$PATH:$MAGICK_HOME/bin/
 #Mysql
 export PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
 
+#NGINX
+export PATH=/usr/local/nginx/sbin:$PATH
+
+#History related
+
+HISTSIZE=100
+SAVEHIST=100
+HISTFILE=~/.zsh/history
+setopt append_history
+setopt inc_append_history
+setopt extended_history
+setopt hist_find_no_dups
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+setopt hist_ignore_space
+setopt hist_no_store
+setopt hist_no_functions
+setopt no_hist_beep
+setopt hist_save_no_dups

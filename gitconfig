@@ -1,28 +1,32 @@
 [alias]
-	st = status
-	pom = push origin master
+st = status
+pom = push origin master
 [color]
-  branch = auto
-  diff = auto
-  status = auto
+branch = auto
+diff = auto
+status = auto
 
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+current = yellow reverse
+local = yellow
+remote = green
 
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+meta = yellow bold
+frag = magenta bold
+old = red bold
+new = green bold
+
+[remote "<nickname>"]
+url = <url>
+fetch = <refspec>
 
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+added = yellow
+changed = green
+untracked = cyan
 [user]
-	name = Thiago Bueno
-	email = tbueno@tbueno.com
+name = Thiago Bueno
+email = tbueno@tbueno.com
 [core]
-	excludefile = ~/.gitignore
+excludefile = ~/.gitignore
