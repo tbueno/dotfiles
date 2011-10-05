@@ -13,7 +13,7 @@ prompt off
 
 source ~/.zsh/zsh.sh
  
-PROMPT='╭─ %~%b$(git_super_status) %# 
+PROMPT='╭─ %~%b$(git_super_status)  
 ╰─ ➜ ' # default prompt
 
 RPROMPT='[%t, %w]' # prompt for right side of screen
