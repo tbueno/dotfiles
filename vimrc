@@ -5,6 +5,12 @@ set ruler
 syntax on
 
 
+"Auto ident
+if has("autocmd")
+  filetype indent on
+endif
+
+
 " Set encoding
 set encoding=utf-8
 

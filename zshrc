@@ -11,9 +11,12 @@ autoload -Uz promptinit
 promptinit
 prompt off
 
-# Set prompts
-#PROMPT='%d%>:%{\e[0m%} > ' # default prompt
-RPROMPT='[%w on %D]' # prompt for right side of screen
+source ~/.zsh/zsh.sh
+ 
+PROMPT='╭─ %~%b$(git_super_status) %# 
+╰─ ➜ ' # default prompt
+
+RPROMPT='[%t, %w]' # prompt for right side of screen
 
 #Shell Alias
 alias ls="ls -lG"

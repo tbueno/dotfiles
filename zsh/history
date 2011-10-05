@@ -1,0 +1,82 @@
+: 1317689822:0;ls -la ~
+: 1317689877:0;touch -la ~/.zsh/history
+: 1317689883:0;touch ~/.zsh/history
+: 1317689953:0;rm -rf test
+: 1317689979:0;mkdir zsh/git-prompt
+: 1317690057:0;mvim zsh/git-prompt/gitstatus.py
+: 1317690225:0;mvim zsh/zsh.sh
+: 1317690255:0;vim zsh
+: 1317690304:0;ls zsh
+: 1317690335:0;vim zshrc
+: 1317690348:0;ruby post_commit.rb
+: 1317744516:0;mvim
+: 1317744526:0;mvim .
+: 1317745463:0;spork
+: 1317745602:0;rvm use ruby-1.8.7
+: 1317748215:0;cd spec/javascripts/fixtures
+: 1317753068:0;grep Photo . -r
+: 1317753097:0;grep Photo app -r
+: 1317755439:0;touch app/views/trainer_communications/_form.html.erb
+: 1317755880:0;touch app/views/trainer_communications/_form_js.html.erb
+: 1317756022:0;touch app/views/trainer_communications/edit.html.erb
+: 1317760913:0;rm app/views/trainer_communications/_form.html.erb
+: 1317760919:0;rm app/views/trainer_communications/_form_js.html.erb
+: 1317760923:0;rm app/views/trainer_communications/edit.html.erb
+: 1317761148:0;rake spec SPEC=spec/controllers/trainer_communications_controller_spec.rb
+: 1317761314:0;spec spec/controllers/trainer_communications_controller_spec.rb
+: 1317763105:0;git reset --soft HEAD
+: 1317763122:0;git reset --soft HEAD^
+: 1317763127:0;git reset --soft HEAD^^
+: 1317763161:0;git reset --hard HEAD^^
+: 1317763164:0;git reset --hard HEAD^
+: 1317763165:0;git reset --hard HEAD
+: 1317763205:0;git checkout 6385a4e
+: 1317763250:0;git checkout develop
+: 1317763285:0;git reflog
+: 1317763356:0;git revert ea5e4db
+: 1317763393:0;git add app spe
+: 1317763396:0;git add app spec
+: 1317763427:0;git add app
+: 1317763459:0;git commit -m "Thiago - Keeping form information when form validation fails"
+: 1317763464:0;git diff
+: 1317763776:0;mvim app/views/trainer_communications/_communications.html.erb
+: 1317763857:0;git add app/views/trainer_communications/_communications.html.erb
+: 1317763881:0;git add app/
+: 1317763888:0;git rebase --continue
+: 1317763893:0;git log
+: 1317763908:0;git commit --amend
+: 1317764367:0;git pull --rebase origin develop
+: 1317764398:0;rake spec
+: 1317764620:0;git push origin develop
+: 1317764764:0;cd
+: 1317764772:0;cd tw/fitorbit
+: 1317770245:0;cd ..
+: 1317770399:0;cd cfs
+: 1317770432:0;ls app
+: 1317770441:0;ls app/models/
+: 1317770532:0;mvim app/models/user.rb
+: 1317770563:0;ls spec/controllers
+: 1317770593:0;mvim spec/controllers/trainer_dashboard_controller_spec.rb
+: 1317770629:0;matrical
+: 1317770730:0;mvim app/controllers/announcements_controller.rb --continue
+: 1317770739:0;metrical --continue
+: 1317770768:0;rvm list
+: 1317770786:0;rvm use ruby-1.9.2
+: 1317770792:0;bundle install
+: 1317771049:0;gem install metrical
+: 1317771228:0;mvim app/controllers/announcements_controller.rb
+: 1317772307:0;vim .metrics
+: 1317772334:0;metrical
+: 1317772596:0;git branch
+: 1317772739:0;git checkout git checkout .
+: 1317772831:0;git checkout -d twport
+: 1317772841:0;git checkout -B twport
+: 1317772848:0;git pull --rebase
+: 1317772860:0;git pull --rebase origin twport
+: 1317772921:0;git st
+: 1317772948:0;mvim app/models/trainer.rb
+: 1317776031:0;cd dev/dotfiles
+: 1317776039:0;ls
+: 1317776046:0;mvim vimrc
+: 1317776068:0;mvim zshrc
+: 1317776103:0;git add .
