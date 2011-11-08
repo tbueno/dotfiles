@@ -32,6 +32,10 @@ export PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
 #NGINX
 export PATH=/usr/local/nginx/sbin:$PATH
 
+
+#Kindlegen
+export PATH=~/Ebooks/tools/KindleGen_Mac_i386_v1.2:$PATH
+
 #History related
 
 HISTSIZE=100
