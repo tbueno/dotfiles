@@ -1,5 +1,4 @@
 #Temporary solution for RVM x GCC problen in LION
-export CC=/usr/bin/gcc-4.2
 [[ -s "/Users/tbueno/.rvm/scripts/rvm" ]] && source "/Users/tbueno/.rvm/scripts/rvm"
 
 #Autocomplete
@@ -20,6 +19,7 @@ RPROMPT='[%t, %w]' # prompt for right side of screen
 
 #Shell Alias
 alias ls="ls -lG"
+alias irb="irb -r irb/completion"
 
 #Image magick
 export MAGICK_HOME="/opt/ImageMagick-6.7.1"
@@ -32,15 +32,18 @@ export PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
 #NGINX
 export PATH=/usr/local/nginx/sbin:$PATH
 
-
 #Kindlegen
-export PATH=~/Ebooks/tools/KindleGen_Mac_i386_v1.2:$PATH
+export KINDLEGEN_HOME=/Users/tbueno/dev/tools/KindleGen_Mac_i386_v1
+export PATH=$KINDLEGEN_HOME:$PATH
+
+>>>>>>> 9ba46f8d61adda098f66987978b24fd13e0fe6e5
 
 #History related
 
 HISTSIZE=100
 SAVEHIST=100
 HISTFILE=~/.zsh/history
+
 setopt append_history
 setopt inc_append_history
 setopt extended_history
