@@ -36,7 +36,6 @@ export PATH=/usr/local/nginx/sbin:$PATH
 export KINDLEGEN_HOME=/Users/tbueno/dev/tools/KindleGen_Mac_i386_v1
 export PATH=$KINDLEGEN_HOME:$PATH
 
->>>>>>> 9ba46f8d61adda098f66987978b24fd13e0fe6e5
 
 #History related
 
