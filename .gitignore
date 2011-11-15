@@ -1,2 +1,3 @@
 zsh/history
 post_commit.rb
+*.swp

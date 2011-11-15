@@ -23,6 +23,7 @@ alias irb="irb -r irb/completion"
 #EDITOR Aliases
 alias -s rb=mvim
 
+#Kindlegen
 export KINDLEGEN_HOME=/Users/tbueno/dev/tools/KindleGen_Mac_i386_v1
 export PATH=$KINDLEGEN_HOME:$PATH
 
@@ -34,6 +35,7 @@ source ~/.rbenv/libexec/../completions/rbenv.zsh
 HISTSIZE=100
 SAVEHIST=100
 HISTFILE=~/.zsh/history
+
 setopt append_history
 setopt inc_append_history
 setopt extended_history
