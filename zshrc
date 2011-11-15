@@ -1,5 +1,4 @@
-#Temporary solution for RVM x GCC problen in LION
-[[ -s "/Users/tbueno/.rvm/scripts/rvm" ]] && source "/Users/tbueno/.rvm/scripts/rvm"
+export CC=/usr/bin/gcc
 
 #Autocomplete
 autoload -U compinit
@@ -17,25 +16,19 @@ PROMPT='╭─ %~%b$(git_super_status)
 
 RPROMPT='[%t, %w]' # prompt for right side of screen
 
-#Shell Alias
+#Shell Aliases
 alias ls="ls -lG"
 alias irb="irb -r irb/completion"
 
-#Image magick
-export MAGICK_HOME="/opt/ImageMagick-6.7.1"
-export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
-export PATH=$PATH:$MAGICK_HOME/bin/
-
-#Mysql
-export PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
-
-#NGINX
-export PATH=/usr/local/nginx/sbin:$PATH
+#EDITOR Aliases
+alias -s rb=mvim
 
 export KINDLEGEN_HOME=/Users/tbueno/dev/tools/KindleGen_Mac_i386_v1
 export PATH=$KINDLEGEN_HOME:$PATH
 
-
+# RBEnv 
+export PATH=$HOME/.rbenv/bin:$PATH
+source ~/.rbenv/libexec/../completions/rbenv.zsh
 #History related
 
 HISTSIZE=100
