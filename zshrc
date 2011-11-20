@@ -19,6 +19,7 @@ RPROMPT='[%t, %w]' # prompt for right side of screen
 #Shell Aliases
 alias ls="ls -lG"
 alias irb="irb -r irb/completion"
+alias tmux="TERM=screen-256color-bce tmux" #Load tmux with 256 colors
 
 #EDITOR Aliases
 alias -s rb=mvim
