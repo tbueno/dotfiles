@@ -1,3 +1,9 @@
+" Call Pathogen
+call pathogen#infect()
+call pathogen#helptags()
+
+
+
 set nocompatible
 
 set number
