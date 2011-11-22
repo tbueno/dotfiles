@@ -11,10 +11,10 @@ prompt off
 
 source ~/.zsh/zsh.sh
  
-PROMPT='╭─ %~%b$(git_super_status)  
+PROMPT='╭─ %~
 ╰─ ➜ ' # default prompt
 
-RPROMPT='[%t, %w]' # prompt for right side of screen
+RPROMPT='%b$(git_super_status)' 
 
 #Shell Aliases
 alias ls="ls -lG"
