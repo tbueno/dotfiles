@@ -28,11 +28,14 @@ alias -s rb=mvim
 export KINDLEGEN_HOME=/Users/tbueno/dev/tools/KindleGen_Mac_i386_v1
 export PATH=$KINDLEGEN_HOME:$PATH
 
-# RBEnv 
-export PATH=$HOME/.rbenv/bin:$PATH
-source ~/.rbenv/libexec/../completions/rbenv.zsh
-#History related
+#RVM
+export CC=/usr/bin/gcc-4.2
+[[ -s "/Users/tbueno/.rvm/scripts/rvm" ]] && source "/Users/tbueno/.rvm/scripts/rvm"  # This loads RVM into a shell session
 
+#Mysql
+export PATH=/usr/local/mysql/bin:$PATH
+
+#History related
 HISTSIZE=100
 SAVEHIST=100
 HISTFILE=~/.zsh/history

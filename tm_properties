@@ -1,0 +1,6 @@
+fontName = "Menlo"
+fontSize = 14
+tabSize        = 2
+softTabs       = true
+sofWrap        = false
+showInvisibles = true
