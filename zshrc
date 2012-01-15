@@ -1,4 +1,5 @@
-export CC=/usr/bin/gcc
+#Loads Environment configurations
+. ~/.zsh/env
 
 #Autocomplete
 autoload -U compinit
@@ -10,30 +11,14 @@ promptinit
 prompt off
 
 source ~/.zsh/zsh.sh
+
+#Load Aliases
+. ~/.zsh/aliases
  
 PROMPT='╭─ %~
 ╰─ ➜ ' # default prompt
 
 RPROMPT='%b$(git_super_status)' 
-
-#Shell Aliases
-alias ls="ls -lG"
-alias irb="irb -r irb/completion"
-alias tmux="TERM=screen-256color-bce tmux" #Load tmux with 256 colors
-
-#EDITOR Aliases
-alias -s rb=mvim
-
-#Kindlegen
-export KINDLEGEN_HOME=/Users/tbueno/dev/tools/KindleGen_Mac_i386_v1
-export PATH=$KINDLEGEN_HOME:$PATH
-
-#RVM
-export CC=/usr/bin/gcc-4.2
-[[ -s "/Users/tbueno/.rvm/scripts/rvm" ]] && source "/Users/tbueno/.rvm/scripts/rvm"  # This loads RVM into a shell session
-
-#Mysql
-export PATH=/usr/local/mysql/bin:$PATH
 
 #History related
 HISTSIZE=100

@@ -1,0 +1,15 @@
+# Lion Workaround for compiler
+export CC=/usr/bin/gcc
+
+#Kindlegen
+export KINDLEGEN_HOME=/Users/tbueno/dev/tools/KindleGen_Mac_i386_v1
+export PATH=$KINDLEGEN_HOME:$PATH
+
+#RVM
+export CC=/usr/bin/gcc-4.2
+[[ -s "/Users/tbueno/.rvm/scripts/rvm" ]] && source "/Users/tbueno/.rvm/scripts/rvm"  # This loads RVM into a shell session
+
+#Mysql
+export PATH=/usr/local/mysql/bin:$PATH
+
+
