@@ -11,5 +11,3 @@ export CC=/usr/bin/gcc-4.2
 
 #Mysql
 export PATH=/usr/local/mysql/bin:$PATH
-
-
