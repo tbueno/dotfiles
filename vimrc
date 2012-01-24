@@ -37,6 +37,10 @@ set smartcase
 " Status bar
 set laststatus=2
 
+"Turning off vim backup files
+set nobackup
+set nowritebackup
+set noswapfile
 
 " MAPPINGS
 
