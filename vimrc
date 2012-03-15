@@ -1,21 +1,19 @@
+set nocompatible
+
 " Call Pathogen
 call pathogen#infect()
 call pathogen#helptags()
-
-
-
-set nocompatible
 
 set number
 set ruler
 syntax on
 
-
-"Auto ident
+"Autoident
 if has("autocmd")
   filetype indent on
 endif
-
+set autoindent
+set copyindent     "Seriously, vim? 
 
 " Set encoding
 set encoding=utf-8
@@ -47,7 +45,7 @@ set noswapfile
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
+nnoremap ; :
 
 " COMMAND-T configurations
 set noequalalways
