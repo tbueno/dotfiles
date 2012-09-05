@@ -10,3 +10,9 @@
 [submodule "snipmate.vim"]
 	path = snipmate.vim
 	url = /Users/tbueno/dev/dotfiles/vim/bundle/snipmate.vim
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
+[submodule "textile.vim"]
+	path = textile.vim
+	url = git://github.com/timcharper/textile.vim.git

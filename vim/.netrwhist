@@ -1,6 +1,6 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/tbueno/dev/apps/planetafutebol/app/views'
-let g:netrw_dirhist_2='/Users/tbueno/dev/apps/planetafutebol/app/views/clubs'
-let g:netrw_dirhist_3='/Users/tbueno/dev/spikes/monitor'
-let g:netrw_dirhist_4='/Users/tbueno/dev/apps/planetafutebol'
+let g:netrw_dirhist_1='/Users/tbueno/dev/apps/gbell/public/js'
+let g:netrw_dirhist_2='/Users/tbueno/dev/javascript/git.js'
+let g:netrw_dirhist_3='/Users/tbueno/dev/javascript/git.js/demos'
+let g:netrw_dirhist_4='/Users/tbueno/dev/javascript/git.js/demos/repo-viewer'

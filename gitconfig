@@ -27,6 +27,6 @@ changed = green
 untracked = cyan
 [user]
 name = Thiago Bueno
-email = tbueno@tbueno.com
+	email = tbueno@thoughtworks.com
 [core]
 excludefile = ~/.gitignore

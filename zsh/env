@@ -2,7 +2,7 @@
 export CC=/usr/bin/gcc
 
 #Kindlegen
-export KINDLEGEN_HOME=/Users/tbueno/dev/tools/KindleGen_Mac_i386_v1
+export KINDLEGEN_HOME=/Users/tbueno/dev/tools/KindleGen_Mac_i386_v1.2
 export PATH=$KINDLEGEN_HOME:$PATH
 
 #RVM

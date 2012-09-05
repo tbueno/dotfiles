@@ -6,6 +6,8 @@ if has("gui_running")                       " Removing macvim's toolbar
     set guioptions=egmrt
 endif
 
+"Turning off beep
+set vb t_vb=
 
 "COMMAND-T configurations
 macmenu &File.New\ Tab key=<D-T>

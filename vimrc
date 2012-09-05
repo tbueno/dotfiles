@@ -40,6 +40,10 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+"Turn off beeping
+set noeb vb t_vb=
+
+
 " MAPPINGS
 
 " Opens an edit command with the path of the currently edited file filled in

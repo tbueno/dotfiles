@@ -1,6 +1,8 @@
 #Loads Environment configurations
 . ~/.zsh/env
 
+# CTAGS for mac osx
+alias ctags="`brew --prefix`/bin/ctags"
 #Autocomplete
 autoload -U compinit
 compinit
