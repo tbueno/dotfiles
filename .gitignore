@@ -1,3 +1,4 @@
+.DS_Store
 zsh/history
 post_commit.rb
 *.swp
