@@ -38,3 +38,6 @@ setopt hist_no_store
 setopt hist_no_functions
 setopt no_hist_beep
 setopt hist_save_no_dups
+
+# Enable the ^ sign
+unsetopt extendedglob

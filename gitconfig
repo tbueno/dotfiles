@@ -1,6 +1,8 @@
 [alias]
-st = status
+st  = status
 pom = push origin master
+pr  = pull --rebase
+ca  = commit --amend
 [color]
 branch = auto
 diff = auto
@@ -26,7 +28,7 @@ added = yellow
 changed = green
 untracked = cyan
 [user]
-name = Thiago Bueno
-	email = tbueno@thoughtworks.com
+	name = Thiago Bueno
+	email = tbueno@tbueno.com
 [core]
 excludefile = ~/.gitignore

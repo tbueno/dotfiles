@@ -1,4 +1,3 @@
-# To install source this file from your .zshrc file
 
 # Change this to reflect your installation directory
 export __GIT_PROMPT_DIR=~/.zsh/git-prompt
