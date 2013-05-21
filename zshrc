@@ -12,7 +12,10 @@ autoload -Uz promptinit
 promptinit
 prompt off
 
-source ~/.zsh/zsh.sh
+#loads extensions
+source ~/.zsh/extensions/zsh.sh
+source ~/.zsh/extensions/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/extensions/zsh-history-substring-search.zsh
 
 #Load Aliases
 . ~/.zsh/aliases
