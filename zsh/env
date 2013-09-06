@@ -17,3 +17,5 @@ export PATH=/usr/local/mysql/bin:$PATH
 
 #postgres
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+
+source /opt/boxen/env.sh
