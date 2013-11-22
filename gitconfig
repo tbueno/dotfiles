@@ -3,6 +3,9 @@ st  = status
 pom = push origin master
 pr  = pull --rebase
 ca  = commit --amend
+lp = log -p
+d = diff
+l = log 
 [color]
 branch = auto
 diff = auto
@@ -28,7 +31,14 @@ added = yellow
 changed = green
 untracked = cyan
 [user]
-	name = Thiago Bueno
+	name = tbueno
 	email = tbueno@tbueno.com
 [core]
 excludefile = ~/.gitignore
+excludesfile = /opt/boxen/config/git/gitignore
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[hub]
+protocol = https
