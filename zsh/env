@@ -5,4 +5,7 @@ export PATH=~/bin:$PATH
 PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 
 #rbenv
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
+
+# Sublime
+PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
