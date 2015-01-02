@@ -3,6 +3,4 @@ alias ls="ls -lG"
 alias irb="irb -r irb/completion"
 alias tmux="TERM=screen-256color-bce tmux" #Load tmux with 256 colors
 alias be="bundle exec"
-
-#EDITOR Aliases
-alias -s rb=mvim
+alias frbe="foreman run bundle exec"

@@ -35,10 +35,10 @@ untracked = cyan
 	email = tbueno@tbueno.com
 [core]
 excludefile = ~/.gitignore
-excludesfile = /opt/boxen/config/git/gitignore
 
 [credential]
-helper = /opt/boxen/bin/boxen-git-credential
 
 [hub]
 protocol = https
+[credential]
+	helper = osxkeychain
