@@ -1,7 +1,6 @@
 #local bin
 export PATH=~/bin:$PATH
 
-#postgres
 #PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 
 #rbenv
@@ -9,6 +8,7 @@ eval "$(rbenv init - zsh)"
 
 # Sublime
 PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+EDITOR=subl
 
 #JAVA
 export JAVA_HOME=$(/usr/libexec/java_home)
