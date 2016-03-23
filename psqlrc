@@ -34,5 +34,3 @@
 \set PROMPT2 '[more] %R > '
 
 \unset QUIET
-
-

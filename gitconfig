@@ -5,7 +5,9 @@ pr  = pull --rebase
 ca  = commit --amend
 lp = log -p
 d = diff
-l = log 
+l = log
+lg = log --graph --oneline --decorate --color --all
+
 [color]
 branch = auto
 diff = auto
