@@ -1,5 +1,5 @@
 #local bin
-export PATH=~/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 #PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 
