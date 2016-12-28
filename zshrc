@@ -19,11 +19,11 @@ source ~/.zsh/extensions/zsh-history-substring-search.zsh
 
 #Load Aliases
 . ~/.zsh/aliases
- 
+
 PROMPT='╭─ %~
 ╰─ ➜ ' # default prompt
 
-RPROMPT='%b$(git_super_status)' 
+RPROMPT='%b$(git_super_status)'
 
 #History related
 HISTSIZE=100
@@ -44,3 +44,4 @@ setopt hist_save_no_dups
 
 # Enable the ^ sign
 unsetopt extendedglob
+

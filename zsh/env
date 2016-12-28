@@ -1,7 +1,6 @@
 #local bin
 export PATH=/usr/local/bin:$PATH
 
-#PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 
 #rbenv
 eval "$(rbenv init - zsh)"
@@ -13,17 +12,14 @@ EDITOR=subl
 #JAVA
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-#DOCKER
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/bueno/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-
 # GO
 export GOPATH=$HOME/dev/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+# Terraform
+export PATH=/usr/local/terraform/bin:/Users/bueno/dev/tools/terraform:$PATH
 
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
