@@ -35,6 +35,7 @@ untracked = cyan
 [user]
 	name = tbueno
 	email = tbueno@tbueno.com
+  signingkey = FFE8DC24EECA200C
 [core]
 excludefile = ~/.gitignore
 
@@ -44,3 +45,5 @@ excludefile = ~/.gitignore
 protocol = https
 [credential]
 	helper = osxkeychain
+[commit]
+	gpgsign = true
