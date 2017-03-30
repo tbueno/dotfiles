@@ -5,7 +5,7 @@ pr  = pull --rebase
 ca  = commit --amend
 lp = log -p
 d = diff
-l = log
+l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 lg = log --graph --oneline --decorate --color --all
 
 [color]
@@ -35,7 +35,7 @@ untracked = cyan
 [user]
 	name = tbueno
 	email = tbueno@tbueno.com
-  signingkey = FFE8DC24EECA200C
+  signingkey = 2376EDB79C1388C0
 [core]
 excludefile = ~/.gitignore
 
@@ -46,4 +46,4 @@ protocol = https
 [credential]
 	helper = osxkeychain
 [commit]
-	gpgsign = true
+	gpgsign = false
