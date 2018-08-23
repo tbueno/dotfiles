@@ -9,9 +9,6 @@ eval "$(rbenv init - zsh)"
 PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 EDITOR=subl
 
-#JAVA
-export JAVA_HOME=$(/usr/libexec/java_home)
-
 # GO
 export GOPATH=$HOME/dev/go
 export GOROOT=/usr/local/opt/go/libexec
