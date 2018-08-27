@@ -15,8 +15,9 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-# Terraform
-export PATH=/usr/local/terraform/bin:/Users/bueno/dev/tools/terraform:$PATH
+# Terraform & Terragrunt
+export PATH=/Users/bueno/dev/tools/terraform:$PATH
+export PATH=/Users/bueno/dev/tools/terragrunt:$PATH
 
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
