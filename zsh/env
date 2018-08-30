@@ -22,6 +22,9 @@ export PATH=/Users/bueno/dev/tools/terragrunt:$PATH
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
 
+# Python executables
+export PATH=/Users/bueno/Library/Python/2.7/bin:$PATH
+
 
 export PATH="/usr/local/opt/gpg-agent/bin:$PATH"
 # Pynentry configuration for GPG
