@@ -22,6 +22,7 @@ export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
 
 
+export PATH="/usr/local/opt/gpg-agent/bin:$PATH"
 # Pynentry configuration for GPG
 if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
     source ~/.gnupg/.gpg-agent-info
