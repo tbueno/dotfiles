@@ -9,7 +9,7 @@ from subprocess import Popen, PIPE
 gitsym = Popen(['git', 'symbolic-ref', 'HEAD'], stdout=PIPE, stderr=PIPE)
 branch, error = gitsym.communicate()
 
-if error.find('fatal: Not a git repository') != -1:
+if error.find(b'fatal: Not a git repository') != -1:
 	import sys
 	sys.exit(0)
 
@@ -56,13 +56,11 @@ else:
 			remote += '%s%s' % (symbols['ahead of'], ahead)
 
 out = '\n'.join([
-	branch,
+	str(branch, 'utf-8'),
 	remote,
 	staged,
 	conflicts,
 	changed,
 	untracked,
 	clean])
-print out
-
-
+print(out)
