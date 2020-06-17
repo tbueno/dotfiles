@@ -44,3 +44,4 @@ setopt hist_save_no_dups
 # Enable the ^ sign
 unsetopt extendedglob
 
+export PATH="/usr/local/sbin:$PATH"

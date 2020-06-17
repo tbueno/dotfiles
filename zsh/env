@@ -24,3 +24,7 @@ if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 else
     eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
+
+# Python configuration
+PYTHON_USER_BASE_PATH=$(python -m site --user-base)
+export PATH=$PATH:$PYTHON_USER_BASE_PATH/bin
