@@ -1,10 +1,6 @@
 #local bin
 export PATH=/usr/local/bin:$PATH
 
-
-#rbenv
-eval "$(rbenv init - zsh)"
-
 # Sublime
 PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 EDITOR=subl
@@ -15,15 +11,9 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-# Terragrunt
-export PATH=/Users/bueno/dev/tools/terragrunt:$PATH
 
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
-
-# Python executables
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
-export PATH=/Users/bueno/Library/Python/3.7/bin:$PATH
+# asdf
+ export PATH="$HOME/.asdf/shims:$PATH"
 
 
 export PATH="/usr/local/opt/gpg-agent/bin:$PATH"
