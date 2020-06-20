@@ -15,3 +15,7 @@ ln -fs "$(pwd)/psqlrc" ~/.psqlrc
 
 pip install awscli --user
 
+asdf install golang latest
+asdf install ruby latest
+asdf install python latest
+asdf install terraform latest
