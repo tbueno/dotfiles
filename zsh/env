@@ -7,10 +7,11 @@ EDITOR=subl
 
 # GO
 export GOPATH=$HOME/dev/go
-export GOROOT=/usr/local/opt/go/libexec
+export ASDFINSTALLS=$HOME/.asdf/installs
+GOV=$(asdf current golang | awk '{print $1}')
+export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-
 
 # asdf
  export PATH="$HOME/.asdf/shims:$PATH"
