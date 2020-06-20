@@ -3,7 +3,7 @@
 echo ">>>>>>>>>>> INSTALLING HOMEBREW <<<<<<<<<<<<<<<"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew install zsh git gpg-agent wget go nvm rbenv zsh-syntax-highlighting tfenv
+brew install zsh git gpg-agent wget go zsh-syntax-highlighting asdf
 
 
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
