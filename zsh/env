@@ -5,7 +5,6 @@ export PATH=/usr/local/bin:$PATH
 PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 EDITOR=subl
 
-
 # asdf
 export PATH="$HOME/.asdf/shims:$PATH"
 export ASDFINSTALLS=$HOME/.asdf/installs

@@ -13,7 +13,6 @@ promptinit
 prompt off
 
 #loads extensions
-source ~/.zsh/extensions/zsh.sh
 source ~/.zsh/extensions/zsh-history-substring-search.zsh
 
 #Load Aliases
@@ -22,7 +21,6 @@ source ~/.zsh/extensions/zsh-history-substring-search.zsh
 PROMPT='╭─ %~
 ╰─ ➜ ' # default prompt
 
-RPROMPT='%b$(git_super_status)'
 
 #History related
 HISTSIZE=100

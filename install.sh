@@ -12,6 +12,7 @@ ln -fs "$(pwd)/gitconfig" ~/.gitconfig
 ln -fs "$(pwd)/zshrc" ~/.zshrc
 ln -fs "$(pwd)/zsh" ~/.zsh
 ln -fs "$(pwd)/psqlrc" ~/.psqlrc
+ln -fs "$(pwd)/tool-versions" ~/.tool-versions
 
 asdf plugin add golang
 asdf install golang latest
