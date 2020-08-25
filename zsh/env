@@ -5,16 +5,23 @@ export PATH=/usr/local/bin:$PATH
 PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 EDITOR=subl
 
+
+# asdf
+export PATH="$HOME/.asdf/shims:$PATH"
+export ASDFINSTALLS=$HOME/.asdf/installs
+
+
 # GO
 export GOPATH=$HOME/dev/go
-export ASDFINSTALLS=$HOME/.asdf/installs
 GOV=$(asdf current golang | awk '{print $1}')
 export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-# asdf
- export PATH="$HOME/.asdf/shims:$PATH"
+#python with asdf
+PYV=$(asdf current python | awk '{print $1}')
+export PYPATH=$ASDFINSTALLS/python/$PYV/
+export PATH=$PATH:$PYPATH/bin
 
 
 export PATH="/usr/local/opt/gpg-agent/bin:$PATH"
@@ -25,7 +32,3 @@ if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 else
     eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
-
-# Python configuration
-PYTHON_USER_BASE_PATH=$(python -m site --user-base)
-export PATH=$PATH:$PYTHON_USER_BASE_PATH/bin
