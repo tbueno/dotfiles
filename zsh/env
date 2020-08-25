@@ -22,13 +22,3 @@ export PATH=$PATH:$GOROOT/bin
 PYV=$(asdf current python | awk '{print $1}')
 export PYPATH=$ASDFINSTALLS/python/$PYV/
 export PATH=$PATH:$PYPATH/bin
-
-
-export PATH="/usr/local/opt/gpg-agent/bin:$PATH"
-# Pynentry configuration for GPG
-if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source ~/.gnupg/.gpg-agent-info
-    export GPG_AGENT_INFO
-else
-    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
-fi

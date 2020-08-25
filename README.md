@@ -3,6 +3,7 @@ Set of instructions and configurations to setup my personal development macbook 
 
 
 ## Setup
+Install Iterm2 and setup `/bin/zsh` as command to be executed at start.
 
 Run `./install.sh` in order to setup the minimum required applications.
 
