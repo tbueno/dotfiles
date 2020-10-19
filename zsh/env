@@ -21,3 +21,6 @@ export PATH=$PATH:$GOROOT/bin
 PYV=$(asdf current python | awk '{print $1}')
 export PYPATH=$ASDFINSTALLS/python/$PYV/
 export PATH=$PATH:$PYPATH/bin
+
+# Install Poetry
+export PATH="$HOME/.poetry/bin:$PATH"
