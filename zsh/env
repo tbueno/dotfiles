@@ -6,18 +6,33 @@ PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 EDITOR=subl
 
 # asdf
+echo -e "\n. $(brew --prefix asdf)/asdf.sh"
 export PATH="$HOME/.asdf/shims:$PATH"
 export ASDFINSTALLS=$HOME/.asdf/installs
 
 
 # GO
+asdf global golang 1.15.7
 export GOPATH=$HOME/dev/go
-GOV=$(asdf current golang | awk '{print $1}')
+GOV=$(asdf current golang | awk '{print $2}')
 export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-#python with asdf
+# python with asdf
+asdf global python 3.9.1
 PYV=$(asdf current python | awk '{print $1}')
 export PYPATH=$ASDFINSTALLS/python/$PYV/
 export PATH=$PATH:$PYPATH/bin
+
+# Node with asdf
+ NV=$(asdf current nodejs | awk '{print $2}')
+ export NPMPATH=$ASDFINSTALLS/nodejs/16.1.0/.npm
+ export PATH=$PATH:$NPMPATH/bin
+
+
+# ruby with asdf
+asdf global ruby 3.0.2
+RB=$(asdf current ruby | awk '{print $2}')
+export RBPATH=$ASDFINSTALLS/ruby/$RB
+export PATH=$PATH:$RBPATH/bin
