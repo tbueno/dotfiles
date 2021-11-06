@@ -9,6 +9,7 @@ brew install zsh git wget go zsh-syntax-highlighting asdf
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
 
 ln -fs "$(pwd)/gitconfig" ~/.gitconfig
+ln -fs "$(pwd)/gitignore" ~/.gitignore_global
 ln -fs "$(pwd)/zshrc" ~/.zshrc
 ln -fs "$(pwd)/zsh" ~/.zsh
 ln -fs "$(pwd)/psqlrc" ~/.psqlrc

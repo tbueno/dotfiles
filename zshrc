@@ -12,6 +12,9 @@ autoload -Uz promptinit
 promptinit
 prompt off
 
+#Activate vi-mode
+bindkey -v
+
 #loads extensions
 source ~/.zsh/extensions/zsh-history-substring-search.zsh
 

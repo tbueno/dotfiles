@@ -30,9 +30,11 @@ export PATH=$PATH:$PYPATH/bin
  export NPMPATH=$ASDFINSTALLS/nodejs/16.1.0/.npm
  export PATH=$PATH:$NPMPATH/bin
 
-
 # ruby with asdf
 asdf global ruby 3.0.2
 RB=$(asdf current ruby | awk '{print $2}')
 export RBPATH=$ASDFINSTALLS/ruby/$RB
 export PATH=$PATH:$RBPATH/bin
+
+# Install Poetry
+export PATH="$HOME/.poetry/bin:$PATH"
