@@ -1,6 +1,9 @@
 #local bin
 export PATH=/usr/local/bin:$PATH
 
+#activate homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Sublime
 PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 EDITOR=subl
