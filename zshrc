@@ -29,6 +29,7 @@ PROMPT='╭─ %~
 HISTSIZE=100
 SAVEHIST=100
 HISTFILE=~/.zsh/history
+bindkey '^R' history-incremental-search-backward
 
 setopt append_history
 setopt inc_append_history
