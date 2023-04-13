@@ -1,0 +1,21 @@
+#!/bin/bash
+
+brew install zsh-syntax-highlighting asdf
+
+echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
+
+ln -fs "$(pwd)/gitconfig" ~/.gitconfig
+ln -fs "$(pwd)/gitignore" ~/.gitignore_global
+ln -fs "$(pwd)/zshrc" ~/.zshrc
+ln -fs "$(pwd)/zsh" ~/.zsh
+ln -fs "$(pwd)/psqlrc" ~/.psqlrc
+
+source ~/.zshrc
+
+echo ">>>>>>>>>>> Install asdf languages and plugins <<<<<<<<<<<<<<<"
+asdf plugin add golang
+asdf install golang $(cat ./versions/go)
+asdf plugin add nodejs
+asdf install nodejs $(cat ./versions/nodejs)
+asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+asdf install rust $(cat ./versions/rust)

@@ -34,11 +34,7 @@ changed = green
 untracked = cyan
 [user]
 	name = tbueno
-	email = tbueno@tbueno.com
-  signingkey = 2376EDB79C1388C0
-[core]
-excludefile = ~/.gitignore
-	excludesfile = /Users/bueno/.gitignore_global
+	email = tbueno@gmail.com
 
 [credential]
 

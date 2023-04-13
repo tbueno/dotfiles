@@ -1,6 +1,2 @@
-#Shell Aliases
+# Shell Aliases
 alias ls="ls -la"
-alias irb="irb -r irb/completion"
-alias tmux="TERM=screen-256color-bce tmux" #Load tmux with 256 colors
-alias be="bundle exec"
-alias frbe="foreman run bundle exec"
