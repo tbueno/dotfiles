@@ -23,3 +23,8 @@ export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 asdf global golang $GOV
+
+# Python
+export PYENV_ROOT=$HOME/.pyenv
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
