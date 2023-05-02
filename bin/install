@@ -1,7 +1,7 @@
 #!/bin/bash
 
 brew update
-brew install zsh-syntax-highlighting asdf pyenv pyenv-virtualenv docker docker-compose kubectl colima
+brew install zsh-syntax-highlighting asdf pyenv pyenv-virtualenv docker docker-compose kubectl colima postgresql@14 postgis
 
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
 
@@ -12,6 +12,8 @@ ln -fs "$(pwd)/zsh" ~/.zsh
 ln -fs "$(pwd)/psqlrc" ~/.psqlrc
 
 source ~/.zshrc
+
+brew services start postgresql
 
 echo ">>>>>>>>>>> Install asdf languages and plugins <<<<<<<<<<<<<<<"
 asdf plugin add golang
