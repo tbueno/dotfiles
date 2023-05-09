@@ -17,6 +17,7 @@ bindkey -v
 
 #loads extensions
 source ~/.zsh/extensions/zsh-history-substring-search.zsh
+source ~/.zsh/extensions/pyenv.zsh
 
 #Load Aliases
 . ~/.zsh/aliases
