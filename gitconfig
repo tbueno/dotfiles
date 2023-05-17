@@ -44,3 +44,5 @@ protocol = https
 	helper = osxkeychain
 [commit]
 	gpgsign = false
+[core]
+	editor = nvim
