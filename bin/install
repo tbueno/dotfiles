@@ -9,6 +9,7 @@ ln -fs "$(pwd)/gitconfig" ~/.gitconfig
 ln -fs "$(pwd)/gitignore" ~/.gitignore_global
 ln -fs "$(pwd)/zshrc" ~/.zshrc
 ln -fs "$(pwd)/zsh" ~/.zsh
+ln -fs "$(pwd)/oh-my-zsh" ~/.oh-my-zsh
 ln -fs "$(pwd)/psqlrc" ~/.psqlrc
 ln -fs "$(pwd)/config/nvim" ~/.config/nvim
 
