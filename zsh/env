@@ -5,11 +5,6 @@ export PATH=/usr/local/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export XDG_CONFIG_HOME=$HOME/.config
-# asdf
-echo -e "\n. $(brew --prefix asdf)/asdf.sh"
-export PATH="$HOME/.asdf/shims:$PATH"
-export ASDFINSTALLS=$HOME/.asdf/installs
-
 
 # Rust
 export RUSTV=$(cat ~/dev/dotfiles/versions/rust)
