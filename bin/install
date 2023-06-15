@@ -27,3 +27,9 @@ asdf install rust $(cat ./versions/rust)
 pyenv install $(cat ./versions/python)
 pyenv global $(cat ./versions/python)
 eval "$(pyenv virtualenv-init -)"
+
+# Install special fonts
+brew tap homebrew/cask-fonts
+brew install --cask font-jetbrains-mono
+brew install --cask font-jetbrains-mono-nerd-font
+brew install --cask ffont-symbols-only-nerd-font
