@@ -77,6 +77,7 @@ plugins=(
 	asdf
 	git
 	pyenv
+	zsh-bat
 )
 
 source $ZSH/oh-my-zsh.sh
