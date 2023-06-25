@@ -112,5 +112,6 @@ unsetopt extendedglob
 export PATH="/usr/local/sbin:$PATH"
 
 # Setup zsh prompt
+fpath+=/opt/homebrew/share/zsh/site-functions
 autoload -U promptinit; promptinit
 prompt pure

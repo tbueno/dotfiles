@@ -22,6 +22,7 @@ asdf plugin add golang
 asdf install golang $(cat ./versions/go)
 asdf plugin add nodejs
 asdf install nodejs $(cat ./versions/nodejs)
+asdf global nodejs $(cat ./versions/nodejs)
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 asdf install rust $(cat ./versions/rust)
 pyenv install $(cat ./versions/python)
