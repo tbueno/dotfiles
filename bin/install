@@ -28,7 +28,8 @@ pyenv install $(cat ./versions/python)
 pyenv global $(cat ./versions/python)
 eval "$(pyenv virtualenv-init -)"
 
-# Install special fonts
+# Fonts and prompt related installations 
+brew install pure
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono
 brew install --cask font-jetbrains-mono-nerd-font
