@@ -65,7 +65,6 @@ ZSH_THEME=""
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
  ZSH_CUSTOM=~/dev/dotfiles/oh-my-zsh/custom/
 
 # Which plugins would you like to load?
