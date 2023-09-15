@@ -29,6 +29,9 @@ pyenv install $(cat ./versions/python)
 pyenv global $(cat ./versions/python)
 eval "$(pyenv virtualenv-init -)"
 
+# Pyright used for neovim python lsp
+npm i -g pyright
+
 # Fonts and prompt related installations 
 brew install pure
 brew tap homebrew/cask-fonts
