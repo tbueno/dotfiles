@@ -1,9 +1,5 @@
 {
-  "Ansi 5 Color" : {
-    "Green Component" : 0.30697798579568808,
-    "Red Component" : 0.62333851809954743,
-    "Blue Component" : 0.52344669809931299
-  },
+  "Set Local Environment Vars" : true,
   "Working Directory" : "\/Users\/bueno\/dev",
   "Prompt Before Closing 2" : 0,
   "Selected Text Color" : {
@@ -402,7 +398,7 @@
   "Disable Smcup Rmcup" : false,
   "Name" : "bueno",
   "Blinking Cursor" : false,
-  "Guid" : "97EECDF4-5ED0-4AAF-81AC-0D2CC20383FB",
+  "Guid" : "9F723634-9C53-45C5-BCF6-02E89F261430",
   "Ansi 1 Color" : {
     "Green Component" : 0.25490197539999998,
     "Red Component" : 0.67450982329999998,
@@ -430,8 +426,8 @@
   "Smart Cursor Color" : true,
   "Semantic History" : {
     "editor" : "com.sublimetext.3",
-    "action" : "best editor",
-    "text" : ""
+    "text" : "",
+    "action" : "best editor"
   },
   "Ambiguous Double Width" : false,
   "Blur Radius" : 2,
@@ -453,7 +449,7 @@
   "Command" : "\/bin\/zsh",
   "Terminal Type" : "xterm-256color",
   "Horizontal Spacing" : 1,
-  "Option Key Sends" : 0,
+  "Option Key Sends" : 2,
   "Blink Allowed" : false,
   "Minimum Contrast" : 0,
   "Ansi 15 Color" : {
@@ -487,5 +483,9 @@
   "Visual Bell" : true,
   "Custom Directory" : "Yes",
   "ASCII Ligatures" : true,
-  "Set Local Environment Vars" : true
+  "Ansi 5 Color" : {
+    "Green Component" : 0.30697798579568808,
+    "Red Component" : 0.62333851809954743,
+    "Blue Component" : 0.52344669809931299
+  }
 }

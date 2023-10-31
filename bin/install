@@ -1,7 +1,7 @@
 #!/bin/bash
 
 brew update
-brew install zsh-syntax-highlighting asdf pyenv pyenv-virtualenv docker docker-compose kubectl colima postgresql@14 postgis neovim bat
+brew install zsh-syntax-highlighting asdf pyenv pyenv-virtualenv docker docker-compose kubectl colima postgresql@14 postgis neovim bat zellij
 
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
 
