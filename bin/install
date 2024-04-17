@@ -2,8 +2,7 @@
 
 brew update
 brew install zsh-syntax-highlighting asdf pyenv pyenv-virtualenv docker docker-compose kubectl colima \
-      postgresql@14 postgis neovim bat zellij
-
+      postgresql@14 postgis neovim bat zellij clojure/tools/clojure
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
 
 ln -fs "$(pwd)/gitconfig" ~/.gitconfig
