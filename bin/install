@@ -1,8 +1,8 @@
 #!/bin/bash
 
 brew update
-brew install zsh-syntax-highlighting asdf pyenv pyenv-virtualenv docker docker-compose kubectl colima postgresql@14 postgis neovim bat zellij
-
+brew install zsh-syntax-highlighting asdf pyenv pyenv-virtualenv docker docker-compose kubectl colima \
+      postgresql@14 postgis neovim bat zellij clojure/tools/clojure
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
 
 ln -fs "$(pwd)/gitconfig" ~/.gitconfig
@@ -20,19 +20,25 @@ brew services start postgresql
 echo ">>>>>>>>>>> Install asdf languages and plugins <<<<<<<<<<<<<<<"
 asdf plugin add golang
 asdf install golang $(cat ./versions/go)
+asdf global golang $(cat ./versions/go)
 asdf plugin add nodejs
 asdf install nodejs $(cat ./versions/nodejs)
 asdf global nodejs $(cat ./versions/nodejs)
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 asdf install rust $(cat ./versions/rust)
+asdf global rust $(cat ./versions/rust)
+
+# Python
+export PYENV_ROOT=$HOME/.pyenv
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 pyenv install $(cat ./versions/python)
 pyenv global $(cat ./versions/python)
-eval "$(pyenv virtualenv-init -)"
+
 
 # Pyright used for neovim python lsp
 npm i -g pyright
 
-# Fonts and prompt related installations 
+# Fonts and prompt related installations
 brew install pure
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono

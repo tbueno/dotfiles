@@ -2,3 +2,4 @@
 zsh/history
 *.swp
 zsh/history
+oh-my-zsh/cache/.zsh-update
