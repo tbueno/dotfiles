@@ -5,6 +5,7 @@ pr  = pull --rebase
 ca  = commit --amend
 lp = log -p
 d = diff
+ds = diff --staged
 l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 lg = log --graph --oneline --decorate --color --all
 b = branch

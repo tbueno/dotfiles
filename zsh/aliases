@@ -1,6 +1,7 @@
 # Shell Aliases
 alias ls="ls -la"
 alias reload="source ~/.zshrc"
-
+alias cb="git branch --show-current"
 # Zellij Aliases
 alias zrf="zellij run -f --"
+
