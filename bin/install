@@ -1,8 +1,16 @@
 #!/bin/bash
 
+# Make sure nix channels are up to date
+nix-channel --add http://nixos.org/channels/nixpkgs-unstable nixpkgs
+nix-channel --update
+
+ln -fs "$(pwd)/nixpkgs" ~/.nixpkgs
+
+darwin-rebuild switch
+
 brew update
-brew install zsh-syntax-highlighting asdf pyenv pyenv-virtualenv docker docker-compose kubectl colima \
-      postgresql@14 postgis neovim bat zellij clojure/tools/clojure
+brew install zsh-syntax-highlighting pyenv-virtualenv kubectl \
+      postgresql@14
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
 
 ln -fs "$(pwd)/gitconfig" ~/.gitconfig

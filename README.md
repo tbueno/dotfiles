@@ -18,6 +18,19 @@ Setup homebrew and activate it in the current shell session:
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ````
 
+Install Nix and open a new session to make sure it is installed
+
+```
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+Then install nix-darwin:
+
+```
+nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
+./result/bin/darwin-installer
+```
+Now, open a new shell session and continue.
+
 Run `bin/install` in order to setup the minimum required applications.
 
 
