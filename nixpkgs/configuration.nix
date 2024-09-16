@@ -12,9 +12,11 @@
     clojure
     colima
     docker
+    git
     home-manager
     neovim
     pyenv
+    zsh-syntax-highlighting
   ];
 
   system.defaults = {

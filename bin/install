@@ -4,12 +4,18 @@
 nix-channel --add http://nixos.org/channels/nixpkgs-unstable nixpkgs
 nix-channel --update
 
-ln -fs "$(pwd)/nixpkgs" ~/.nixpkgs
+ln -fs "$(pwd)/nixpkgs/configuration.nix" ~/.nixpkgs/configuration.nix
+ln -fs "$(pwd)/nixpkgs/flake.nix" ~/.nixpkgs/flake.nix
+ln -fs "$(pwd)/nixpkgs/home.nix" ~/.nixpkgs/home.nix
 
-darwin-rebuild switch
+nix --extra-experimental-features nix-command --extra-experimental-features flakes run nix-darwin -- switch --flake nixpkgs/flake.nix
+
+pushd nixpkgs
+darwin-rebuild switch --flake .
+popd
 
 brew update
-brew install zsh-syntax-highlighting pyenv-virtualenv kubectl \
+brew install pyenv-virtualenv \
       postgresql@14
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
 
