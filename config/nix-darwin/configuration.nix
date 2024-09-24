@@ -1,10 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, home, userName,  ... }:
 
 {
   environment.variables = {
     EDITOR = "nvim";
   };
-  # List packages installed in system profile. To search by name, run:
   environment.systemPackages = with pkgs; [
     alacritty
     asdf-vm
@@ -12,6 +11,7 @@
     clojure
     colima
     docker
+    docker-compose
     git
     home-manager
     neovim
@@ -21,19 +21,29 @@
 
   system.defaults = {
     dock.autohide = true;
+    finder.AppleShowAllExtensions = true;
+    screencapture.location = "~/Downloads/screenshots";
   };
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
-  users.users.bueno = {
-    name = "bueno";
-    home = "/Users/bueno";
+  users.users.${userName} = {
+    home = "/Users/${home}";
   };
 
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;  # default shell on catalina
+
+  # homebrew = {
+  #   enable = true;
+
+  #   casks = [
+  #     "pyenv-virtualenv"
+  #     # "visual-studio-code"
+  #   ];
+  # };
 
   # Enable sudo to be unlocked with touch ID
   security.pam.enableSudoTouchIdAuth = true;

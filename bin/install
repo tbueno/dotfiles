@@ -4,19 +4,15 @@
 nix-channel --add http://nixos.org/channels/nixpkgs-unstable nixpkgs
 nix-channel --update
 
-ln -fs "$(pwd)/nixpkgs/configuration.nix" ~/.nixpkgs/configuration.nix
-ln -fs "$(pwd)/nixpkgs/flake.nix" ~/.nixpkgs/flake.nix
-ln -fs "$(pwd)/nixpkgs/home.nix" ~/.nixpkgs/home.nix
+# Replace the placeholder with the hostname
+sed -i '' "s/HOSTNAME/$(scutil --get LocalHostName)/" config/nix-darwin/flake.nix
 
-nix --extra-experimental-features nix-command --extra-experimental-features flakes run nix-darwin -- switch --flake nixpkgs/flake.nix
-
-pushd nixpkgs
-darwin-rebuild switch --flake .
-popd
+nix --extra-experimental-features nix-command --extra-experimental-features flakes run nix-darwin -- switch --flake ./config/nix-darwin
+. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+darwin-rebuild switch --flake ~/dev/dotfiles/config/nix-darwin
 
 brew update
-brew install pyenv-virtualenv \
-      postgresql@14
+brew install pyenv-virtualenv
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
 
 ln -fs "$(pwd)/gitconfig" ~/.gitconfig
@@ -29,7 +25,6 @@ ln -fs "$(pwd)/config/nvim" ~/.config/nvim
 
 source ~/.zshrc
 
-brew services start postgresql
 
 echo ">>>>>>>>>>> Install asdf languages and plugins <<<<<<<<<<<<<<<"
 asdf plugin add golang

@@ -17,31 +17,34 @@
     configuration = { pkgs, ... }: {
       # not needed. The confs are in separate files
     };
+    home = "bueno";
+    specialArgs =
+      inputs
+      // {
+        inherit userName hostName home;
+      };
   in
   {
-    darwinConfigurations."mini" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations.${hostName} = nix-darwin.lib.darwinSystem {
+      inherit specialArgs;
       system = {
       	# Set Git commit hash for darwin-version.
       	configurationRevision = self.rev or self.dirtyRev or null;
-
-        defaults = {
-          dock.autohide = true;
-          screencapture.location = "~/Downloads/screenshots";
-        };
+        checks.verifyNixPath = false;
       };
 
       modules = [
       	./configuration.nix
 
-        home-manager.darwinModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.mac = import ./home.nix;
-        }
+        # home-manager.darwinModules.home-manager {
+        #     home-manager.useGlobalPkgs = true;
+        #     home-manager.useUserPackages = true;
+        #     home-manager.users.mac = import ./home.nix;
+        # }
       ];
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."mini".pkgs;
+    darwinPackages = self.darwinConfigurations.${hostName}.pkgs;
   };
 }

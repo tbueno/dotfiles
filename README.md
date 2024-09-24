@@ -18,7 +18,7 @@ Setup homebrew and activate it in the current shell session:
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ````
 
-Install Nix and open a new session to make sure it is installed
+Install Nix
 
 ```
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
@@ -29,12 +29,15 @@ Then install nix-darwin:
 ```
 sudo mv /etc/zshrc /etc/zshrc.before-nix-darwin
 sudo mv /etc/bashrc /etc/bashrc.before-nix-darwin
-nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
-./result/bin/darwin-installer
+nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
+nix-channel --update
 ```
+
 Now, open a new shell session and continue.
 
 Run `bin/install` in order to setup the minimum required applications.
+
+Once everything is setup, the environment can be updated with the command `darwin-rebuild switch --flake ~/dev/dotfiles/config/nix-darwin`.
 
 
 ## Versioning
