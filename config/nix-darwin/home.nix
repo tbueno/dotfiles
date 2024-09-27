@@ -8,7 +8,6 @@
       bat
       clojure
       colima
-      direnv
       docker
       docker-compose
       neovim
