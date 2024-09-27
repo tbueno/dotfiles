@@ -5,7 +5,8 @@ nix-channel --add http://nixos.org/channels/nixpkgs-unstable nixpkgs
 nix-channel --update
 
 # Replace the placeholder with the hostname
-sed -i '' "s/HOSTNAME/$(scutil --get LocalHostName)/" config/nix-darwin/flake.nix
+sed -i '' "s/__HOSTNAME__/$(scutil --get LocalHostName)/" config/nix-darwin/flake.nix
+sed -i '' "s/__NAME__/$(whoami)/" config/nix-darwin/flake.nix
 
 nix --extra-experimental-features nix-command --extra-experimental-features flakes run nix-darwin -- switch --flake ./config/nix-darwin
 . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
@@ -15,12 +16,9 @@ brew update
 brew install pyenv-virtualenv
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
 
-ln -fs "$(pwd)/gitconfig" ~/.gitconfig
-ln -fs "$(pwd)/gitignore" ~/.gitignore_global
-ln -fs "$(pwd)/zshrc" ~/.zshrc
+# Copy config directories to home
 ln -fs "$(pwd)/zsh" ~/.zsh
 ln -fs "$(pwd)/oh-my-zsh" ~/.oh-my-zsh
-ln -fs "$(pwd)/psqlrc" ~/.psqlrc
 ln -fs "$(pwd)/config/nvim" ~/.config/nvim
 
 source ~/.zshrc

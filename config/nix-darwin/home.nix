@@ -20,13 +20,18 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # programs.zsh.enable = true;
 
   programs.git = {
     enable = true;
     userName = "Thiago Bueno";
     userEmail = email;
   };
+
+  # Raw configuration files
+  home.file.".zshrc".source = ../../zshrc;
+  home.file.".psqlrc".source = ../../psqlrc;
+  home.file.".gitconfig".source = ../../gitconfig;
+  home.file.".gitignore_global".source = ../../gitignore;
 
   targets.darwin.defaults = {
     NSGlobalDomain = {
