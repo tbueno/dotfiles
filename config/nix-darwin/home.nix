@@ -1,18 +1,32 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, home, email,  ... }:
 
 {
-  home.stateVersion = "24.05";
+  home = {
+    homeDirectory = "/Users/${home}";
+    packages  = with pkgs; [
+      alacritty
+      bat
+      clojure
+      colima
+      docker
+      docker-compose
+      neovim
+      pyenv
+      zsh-syntax-highlighting
+    ];
+    stateVersion = "24.05";
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  # home.username = "bueno";
-  # home.packages = [ pkgs.httpie ];
 
-  # programs.git = {
-  #   enable = true;
-  #   userName = "tbueno";
-  #   userEmail = "tbueno@gmail.com";
-  # };
+  # programs.zsh.enable = true;
+
+  programs.git = {
+    enable = true;
+    userName = "Thiago Bueno";
+    userEmail = email;
+  };
 
   targets.darwin.defaults = {
     NSGlobalDomain = {

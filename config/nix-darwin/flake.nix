@@ -17,11 +17,15 @@
     configuration = { pkgs, ... }: {
       # not needed. The confs are in separate files
     };
+    hostName = "__HOSTNAME__";
+    # This is because home and username (whoami) can be different
+    userName = "__NAME__";
+    email = "tbueno@gmail.com";
     home = "bueno";
     specialArgs =
       inputs
       // {
-        inherit userName hostName home;
+        inherit userName hostName home email;
       };
   in
   {
@@ -36,11 +40,12 @@
       modules = [
       	./configuration.nix
 
-        # home-manager.darwinModules.home-manager {
-        #     home-manager.useGlobalPkgs = true;
-        #     home-manager.useUserPackages = true;
-        #     home-manager.users.mac = import ./home.nix;
-        # }
+        home-manager.darwinModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${userName} = import ./home.nix;
+            home-manager.extraSpecialArgs = specialArgs;
+        }
       ];
     };
 

@@ -5,18 +5,9 @@
     EDITOR = "nvim";
   };
   environment.systemPackages = with pkgs; [
-    alacritty
     asdf-vm
-    bat
-    clojure
-    colima
-    docker
-    docker-compose
     git
     home-manager
-    neovim
-    pyenv
-    zsh-syntax-highlighting
   ];
 
   system.defaults = {
