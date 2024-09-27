@@ -1,12 +1,8 @@
 #local bin
 export PATH=/usr/local/bin:$PATH
-
 #activate homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
 export XDG_CONFIG_HOME=$HOME/.config
-
-eval "$(direnv hook zsh)"
 
 # Rust
 export RUSTV=$(cat ~/dev/dotfiles/versions/rust)

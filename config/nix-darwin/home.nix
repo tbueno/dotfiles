@@ -1,6 +1,7 @@
 { config, lib, pkgs, home, email,  ... }:
-
 {
+  imports = [ ./optibus.nix ];
+
   home = {
     homeDirectory = "/Users/${home}";
     packages  = with pkgs; [
@@ -8,6 +9,7 @@
       bat
       clojure
       colima
+      devenv
       direnv
       docker
       docker-compose
@@ -22,6 +24,12 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.zsh = {
+    enable = true;
+    initExtra = ''
+      eval "$(direnv hook zsh)"
+                              '';
+  };
 
   programs.git = {
     enable = true;
