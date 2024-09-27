@@ -12,8 +12,7 @@ nix --extra-experimental-features nix-command --extra-experimental-features flak
 . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 darwin-rebuild switch --flake ~/dev/dotfiles/config/nix-darwin
 
-brew update
-brew install pyenv-virtualenv
+
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
 
 # Copy config directories to home

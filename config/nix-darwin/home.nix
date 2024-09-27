@@ -8,9 +8,11 @@
       bat
       clojure
       colima
+      direnv
       docker
       docker-compose
       neovim
+      openvpn
       pyenv
       zsh-syntax-highlighting
     ];

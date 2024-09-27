@@ -75,6 +75,7 @@ ZSH_THEME=""
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	asdf
+	direnv
 	git
 	pyenv
 	zsh-autosuggestions
