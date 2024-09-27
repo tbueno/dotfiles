@@ -27,14 +27,24 @@
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;  # default shell on catalina
 
-  # homebrew = {
-  #   enable = true;
+  homebrew = {
+    enable = true;
 
-  #   casks = [
-  #     "pyenv-virtualenv"
-  #     # "visual-studio-code"
-  #   ];
-  # };
+    brews = [
+      "pyenv-virtualenv"
+    ];
+
+    casks = [
+      "1password"
+      "arc"
+      "dropbox"
+      "firefox"
+      "google-chrome"
+      "iterm2"
+      "obsidian"
+      "slacK"
+    ];
+  };
 
   # Enable sudo to be unlocked with touch ID
   security.pam.enableSudoTouchIdAuth = true;

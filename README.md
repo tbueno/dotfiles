@@ -4,10 +4,6 @@ Set of instructions and configurations to setup my personal development macbook 
 
 ## Manual steps
 
-### Iterm 2
-
- - Install Iterm2
- - Import profile in `./profiles/iterm.json` to add status bar, zsh and color configuration
 
 ## Setup
 
@@ -38,6 +34,11 @@ Now, open a new shell session and continue.
 Run `bin/install` in order to setup the minimum required applications.
 
 Once everything is setup, the environment can be updated with the command `darwin-rebuild switch --flake ~/dev/dotfiles/config/nix-darwin`.
+
+
+### Iterm 2
+
+- Import profile in `./profiles/iterm.json` to add status bar, zsh and color configuration
 
 
 ## Versioning
