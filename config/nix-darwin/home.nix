@@ -13,8 +13,8 @@
       direnv
       docker
       docker-compose
+      jetbrains-mono
       neovim
-      openvpn
       pyenv
       zsh-syntax-highlighting
     ];

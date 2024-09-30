@@ -40,13 +40,5 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 pyenv install $(cat ./versions/python)
 pyenv global $(cat ./versions/python)
 
-
 # Pyright used for neovim python lsp
 npm i -g pyright
-
-# Fonts and prompt related installations
-brew install pure
-brew tap homebrew/cask-fonts
-brew install --cask font-jetbrains-mono
-brew install --cask font-jetbrains-mono-nerd-font
-brew install --cask ffont-symbols-only-nerd-font
