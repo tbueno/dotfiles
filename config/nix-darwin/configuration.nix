@@ -1,15 +1,12 @@
 { config, pkgs, home, userName,  ... }:
 
 {
-  environment.variables = {
-    EDITOR = "nvim";
-  };
   environment.systemPackages = with pkgs; [
     asdf-vm
     git
     home-manager
   ];
-
+  nix.settings.experimental-features = "nix-command flakes";
   system.defaults = {
     dock.autohide = true;
     finder.AppleShowAllExtensions = true;
@@ -24,9 +21,6 @@
   };
 
 
-  # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;  # default shell on catalina
-
   programs.direnv.enable = true;
 
   homebrew = {
@@ -39,6 +33,8 @@
     };
 
     brews = [
+      "gettext" # required for pyenv
+      "openssl@1.1"
       "pure"
       "pyenv-virtualenv"
     ];
