@@ -9,6 +9,7 @@
       bat
       clojure
       colima
+      devbox
       devenv
       direnv
       docker
@@ -18,6 +19,10 @@
       pyenv
       zsh-syntax-highlighting
     ];
+    sessionVariables = {
+      PYENV_ROOT = "$HOME/.pyenv";
+
+    };
     stateVersion = "24.05";
   };
 
@@ -27,8 +32,37 @@
   programs.zsh = {
     enable = true;
     initExtra = ''
+      eval "$(pyenv virtualenv-init -)"
       eval "$(direnv hook zsh)"
                               '';
+
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
+    shellAliases = {
+      ls = "ls -la";
+      reload = "source ~/.zshrc";
+    };
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true; # see note on other shells below
+    nix-direnv.enable = true;
+  };
+
+   programs.alacritty = {
+    enable = true;
+    # custom settings
+    settings = {
+      colors.draw_bold_text_with_bright_colors = true;
+      env.TERM = "xterm-256color";
+      font = {
+        size = 12;
+      };
+      scrolling.multiplier = 5;
+      selection.save_to_clipboard = true;
+    };
   };
 
   programs.git = {
