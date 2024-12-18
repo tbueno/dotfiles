@@ -1,11 +1,6 @@
 { config, pkgs, home, userName,  ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    asdf-vm
-    git
-    home-manager
-  ];
   nix.settings.experimental-features = "nix-command flakes";
   system.defaults = {
     dock.autohide = true;
@@ -18,8 +13,20 @@
 
   users.users.${userName} = {
     home = "/Users/${home}";
+    packages = with pkgs; [
+      alacritty
+      bat
+      clojure
+      colima
+      direnv
+      docker
+      git
+      home-manager
+      jetbrains-mono
+      neovim
+      zsh-syntax-highlighting
+    ];
   };
-
 
   programs.direnv.enable = true;
   programs.zsh.enable = true;
@@ -34,10 +41,8 @@
     };
 
     brews = [
-      "gettext" # required for pyenv
-      "openssl@1.1"
+
       "pure"
-      "pyenv-virtualenv"
     ];
 
     casks = [
@@ -45,11 +50,9 @@
       "arc"
       "dropbox"
       "firefox"
-      "google-chrome"
       "iterm2"
       "obsidian"
-      "openvpn-connect"
-      "slacK"
+
       "visual-studio-code"
     ];
   };

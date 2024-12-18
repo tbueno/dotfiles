@@ -1,28 +1,7 @@
 { config, lib, pkgs, home, email,  ... }:
 {
-  imports = [ ./optibus.nix ];
-
   home = {
     homeDirectory = "/Users/${home}";
-    packages  = with pkgs; [
-      alacritty
-      bat
-      clojure
-      colima
-      devbox
-      devenv
-      direnv
-      docker
-      docker-compose
-      jetbrains-mono
-      neovim
-      pyenv
-      zsh-syntax-highlighting
-    ];
-    sessionVariables = {
-      PYENV_ROOT = "$HOME/.pyenv";
-
-    };
     stateVersion = "24.05";
   };
 
@@ -32,22 +11,22 @@
   programs.zsh = {
     enable = true;
     initExtra = ''
-      eval "$(pyenv virtualenv-init -)"
-      eval "$(direnv hook zsh)"
+
                               '';
 
     sessionVariables = {
       EDITOR = "nvim";
     };
     shellAliases = {
-      ls = "ls -la";
-      reload = "source ~/.zshrc";
+      cb = "git branch --show-current";
+      ls = "ls -la --color";
+      reload = "exec zsh";
     };
   };
 
   programs.direnv = {
     enable = true;
-    enableZshIntegration = true; # see note on other shells below
+    enableZshIntegration = true;
     nix-direnv.enable = true;
   };
 
@@ -71,8 +50,21 @@
     userEmail = email;
   };
 
+   oh-my-zsh = {
+    enable = true;
+    custom = "~/dev/dotfiles/oh-my-zsh/custom";
+
+    plugins = [
+      "direnv"
+      "git"
+      "zsh-autosuggestions"
+      "zsh-syntax-highlighting"
+    ];
+
+    theme = "robbyrussell";
+  };
+
   # Raw configuration files
-  home.file.".zshrc".source = ../../zshrc;
   home.file.".psqlrc".source = ../../psqlrc;
   home.file.".gitconfig".source = ../../gitconfig;
   home.file.".gitignore_global".source = ../../gitignore;
