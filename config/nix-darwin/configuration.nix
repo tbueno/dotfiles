@@ -24,6 +24,7 @@
       home-manager
       jetbrains-mono
       neovim
+      pyenv
       zsh-syntax-highlighting
     ];
   };
@@ -41,7 +42,6 @@
     };
 
     brews = [
-
       "pure"
     ];
 
