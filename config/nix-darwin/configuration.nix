@@ -2,11 +2,10 @@
 
 {
   nix.settings.experimental-features = "nix-command flakes";
-  system.defaults = {
-    dock.autohide = true;
-    finder.AppleShowAllExtensions = true;
-    screencapture.location = "~/Downloads/screenshots";
-  };
+
+  imports = [
+    ./system/macos.nix
+  ];
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
@@ -57,10 +56,6 @@
     ];
   };
 
-  # Enable sudo to be unlocked with touch ID
-  security.pam.enableSudoTouchIdAuth = true;
-
   system.stateVersion = 4;
-
   nixpkgs.hostPlatform = "aarch64-darwin";
 }
