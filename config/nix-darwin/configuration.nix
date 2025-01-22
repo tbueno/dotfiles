@@ -14,7 +14,6 @@
   users.users.${userName} = {
     home = "/Users/${home}";
     packages = with pkgs; [
-      alacritty
       bat
       clojure
       colima

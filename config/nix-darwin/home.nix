@@ -6,7 +6,6 @@
   };
 
    imports = [
-    ./programs/alacritty.nix
     ./programs/neovim.nix
     ./programs/zsh.nix
   ];
@@ -29,6 +28,7 @@
   home.file.".psqlrc".source = ../../psqlrc;
   home.file.".gitconfig".source = ../../gitconfig;
   home.file.".gitignore_global".source = ../../gitignore;
+  home.file.".wezterm.lua".source = ../../wezterm.lua;
 
   targets.darwin.defaults = {
     NSGlobalDomain = {
