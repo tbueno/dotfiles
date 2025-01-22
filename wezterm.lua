@@ -30,17 +30,23 @@ config.window_frame = {
 
 config.disable_default_key_bindings = true
 config.keys = {
-  { key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
-  { key = 'Tab', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
-  { key = 't', mods = 'CMD', action = act.SpawnTab 'CurrentPaneDomain' },
-  { key = 'w', mods = 'CMD', action = act.CloseCurrentPane{ confirm = true } },
   { key = '\\', mods = 'CTRL', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
   { key = '-', mods = 'CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
-  { key = 'j', mods = 'CMD', action = act.ActivatePaneDirection 'Down', },
-  { key = 'k', mods = 'CMD', action = act.ActivatePaneDirection 'Up', },
-  { key = 'h', mods = 'CMD', action = act.ActivatePaneDirection 'Left', },
-  { key = 'l', mods = 'CMD', action = act.ActivatePaneDirection 'Right', },
-  { key = 'r', mods = 'CMD', action = act.ReloadConfiguration },
+  { key = '+', mods = 'SUPER|CTRL', action = act.IncreaseFontSize },
+  { key = '-', mods = 'SUPER|CTRL', action = act.DecreaseFontSize },
+  { key = '[', mods = 'SHIFT|SUPER', action = act.ActivateTabRelative(-1) },
+  { key = ']', mods = 'SHIFT|SUPER', action = act.ActivateTabRelative(1) },
+  { key = 'c', mods = 'SUPER', action = act.CopyTo 'Clipboard' },
+  { key = 'h', mods = 'SUPER', action = act.ActivatePaneDirection 'Left', },
+  { key = 'j', mods = 'SUPER', action = act.ActivatePaneDirection 'Down', },
+  { key = 'l', mods = 'SUPER', action = act.ActivatePaneDirection 'Right', },
+  { key = 'k', mods = 'SUPER', action = act.ActivatePaneDirection 'Up', },
+  { key = 'r', mods = 'SUPER', action = act.ReloadConfiguration },
+  { key = 't', mods = 'SUPER', action = act.SpawnTab 'CurrentPaneDomain' },
+  { key = 'v', mods = 'SUPER', action = act.PasteFrom 'Clipboard' },
+  { key = 'w', mods = 'SUPER', action = act.CloseCurrentPane{ confirm = true } },
+  { key = 'Tab', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
+  { key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
 }
 
 -- return the configuration to wezterm
