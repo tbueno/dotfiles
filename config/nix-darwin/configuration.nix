@@ -8,9 +8,6 @@
     ./system/macos.nix
   ];
 
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-
   users.users.${userName} = {
     home = "/Users/${home}";
     packages = with pkgs; [
@@ -24,13 +21,15 @@
       jetbrains-mono
       neovim
       pyenv
+      wezterm
       zsh-syntax-highlighting
+      zsh-autosuggestions
     ];
   };
 
   programs.direnv.enable = true;
   programs.zsh.enable = true;
 
-  system.stateVersion = 4;
+  system.stateVersion = 5;
   nixpkgs.hostPlatform = "aarch64-darwin";
 }

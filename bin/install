@@ -17,9 +17,6 @@ darwin-rebuild switch --flake ~/dev/dotfiles/config/nix-darwin
 
 echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
 
-# Copy config directories to home
-ln -fs "$(pwd)/config/nvim" ~/.config/nvim
-
 
 echo ">>>>>>>>>>> Install asdf languages and plugins <<<<<<<<<<<<<<<"
 asdf plugin add golang

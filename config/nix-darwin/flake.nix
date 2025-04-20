@@ -18,9 +18,9 @@
     configuration = { pkgs, ... }: {
       # not needed. The confs are in separate files
     };
-    hostName = "__HOSTNAME__";
+    hostName = "mini";
     # This is because home and username (whoami) can be different
-    userName = "__NAME__";
+    userName = "bueno";
     email = "tbueno@gmail.com";
     home = "bueno";
     specialArgs =
