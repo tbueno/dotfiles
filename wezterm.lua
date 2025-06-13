@@ -13,7 +13,7 @@ config.scrollback_lines = 5000
 
 
 -- LOOK AND FEEL
-config.color_scheme = 'Afterglow'
+config.color_scheme = 'Tokyo Night'
 config.font = wezterm.font 'JetBrains Mono'
 
 config.window_background_opacity = 0.9
@@ -30,6 +30,7 @@ config.window_frame = {
 
 config.disable_default_key_bindings = true
 config.keys = {
+  { key = 'f', mods = 'SUPER', action = act.Search { CaseSensitiveString = '' } },
   { key = '\\', mods = 'CTRL', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
   { key = '-', mods = 'CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
   { key = '+', mods = 'SUPER|CTRL', action = act.IncreaseFontSize },
