@@ -23,7 +23,6 @@
         "1password"
         "direnv"
         "git"
-        # "pyenv"
         "zsh-autosuggestions"
       ];
 

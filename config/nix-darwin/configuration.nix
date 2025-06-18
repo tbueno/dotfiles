@@ -14,6 +14,7 @@
       bat
       clojure
       colima
+      devbox
       direnv
       docker
       git
@@ -21,6 +22,7 @@
       jetbrains-mono
       neovim
       pyenv
+      uv
       wezterm
       zsh-syntax-highlighting
       zsh-autosuggestions

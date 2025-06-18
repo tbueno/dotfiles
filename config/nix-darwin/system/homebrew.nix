@@ -18,6 +18,7 @@
         "1password"
         "arc"
         "chatgpt"
+        "cursor"
         "dropbox"
         "firefox"
         "iterm2"
