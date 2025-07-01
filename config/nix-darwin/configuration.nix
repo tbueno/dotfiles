@@ -2,6 +2,7 @@
 
 {
   nix.settings.experimental-features = "nix-command flakes";
+  nix.enable = false;
 
   imports = [
     ./system/homebrew.nix
@@ -16,11 +17,14 @@
       colima
       devbox
       direnv
+      devbox
       docker
       git
+      go
       home-manager
       jetbrains-mono
       neovim
+      nodejs
       pyenv
       uv
       wezterm
