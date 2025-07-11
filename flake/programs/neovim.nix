@@ -1,4 +1,4 @@
-{ config, lib, pkgs, home, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   xdg = {
