@@ -2,7 +2,7 @@
 st  = status
 pom = push origin master
 pr  = pull --rebase
-ca  = commit --amend
+ca  = commit --amend --no-edit
 lp = log -p
 d = diff
 ds = diff --staged
@@ -11,9 +11,12 @@ lg = log --graph --oneline --decorate --color --all
 b = branch
 cp = cherry-pick
 
+[branch]
+sort = -committerdate
+
 [color]
 branch = auto
-diff = auto
+# diff = autoq
 status = auto
 
 [color "branch"]
@@ -27,27 +30,55 @@ frag = magenta bold
 old = red bold
 new = green bold
 
-[remote "<nickname>"]
-url = <url>
-fetch = <refspec>
+[column]
+ui = auto
 
 [color "status"]
 added = yellow
 changed = green
 untracked = cyan
+
 [user]
 	name = Thiago Bueno
-	email = thiago.bueno@optibus.com
+	email = tbueno@gmail.com
 
-[credential]
 
-[hub]
-protocol = https
 [credential]
 	helper = osxkeychain
 [commit]
 	gpgsign = false
 [core]
 	editor = nvim
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+
+[help]
+	autocorrect = prompt
+
+[hub]
+protocol = https
+
 [init]
 	defaultBranch = main
+	autoSetupRemote = true
+
+[merge]
+conflictStyle = zdiff3
+
+[push]
+default = simple
+
+[remote "<nickname>"]
+url = <url>
+fetch = <refspec>
+
+[rerere]
+enabled = true
+autoupdate = true

@@ -1,4 +1,4 @@
-{ config, pkgs, user, home, usersPath, ... }:
+{ config, pkgs, ... }:
 
 {
   homebrew = {
@@ -16,14 +16,15 @@
 
       casks = [
         "1password"
-        "arc"
         "chatgpt"
+        "google-chrome"
         "cursor"
         "dropbox"
         "firefox"
-        "iterm2"
         "obsidian"
+        "openvpn-connect"
         "raycast"
+        "slack"
         "visual-studio-code"
         "wezterm"
       ];
