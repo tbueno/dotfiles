@@ -17,13 +17,13 @@
       clojure
       colima
       devbox
-      devbox
       docker
       git
       go
       home-manager
       jetbrains-mono
       neovim
+      nodejs
       zsh-syntax-highlighting
       zsh-autosuggestions
     ];
