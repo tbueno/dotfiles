@@ -9,7 +9,6 @@
 
     shellAliases = {
       cb = "git branch --show-current";
-      k = "kubectl";
       ls = "ls -la --color";
       reload = "exec zsh";
       cat = "bat";

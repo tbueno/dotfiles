@@ -1,6 +1,12 @@
 { config, pkgs, user, home, usersPath, ... }:
 
 {
+  programs.zsh = {
+    shellInit = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    '';
+  };
+
   homebrew = {
       enable = true;
       onActivation = {

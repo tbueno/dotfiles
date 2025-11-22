@@ -2,7 +2,7 @@
 
 {
   # Enable sudo to be unlocked with touch ID
-  security.pam.services.sudo_local.touchIdAuth = true;
+  # security.pam.services.sudo_local.touchIdAuth = true;
 
   system.defaults = {
     NSGlobalDomain = {
