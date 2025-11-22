@@ -3,7 +3,7 @@
 {
   xdg = {
     enable = true;
-    configFile.nvim.source = ~/dev/dotfiles/config/nvim;
+    configFile.nvim.source = "${home}/dev/dotfiles/config/nvim";
   };
 
 }
