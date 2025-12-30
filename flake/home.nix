@@ -12,6 +12,9 @@
   programs.home-manager.enable = true;
 
   home = {
+    sessionPath = [
+      "$HOME/dev/dotfiles/bin"
+    ];
     packages = with pkgs; [
       bat
       clojure
