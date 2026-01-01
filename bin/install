@@ -6,6 +6,8 @@ nix-channel --add https://github.com/nix-community/home-manager/archive/master.t
 nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
 nix-channel --update
 
+ln -s $(PWD)/claude/CLAUDE.md ~/.claude
+
 # Replace the placeholder with the hostname
 sed -i '' "s/__HOSTNAME__/$(scutil --get LocalHostName)/" config/nix-darwin/flake.nix
 sed -i '' "s/__NAME__/$(whoami)/" config/nix-darwin/flake.nix

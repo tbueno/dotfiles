@@ -1,0 +1,6 @@
+[user]
+	name = Thiago Bueno
+	email = tbueno@gmail.com
+
+[core]
+	sshCommand = ssh -i ~/.ssh/tbueno -F /dev/null
