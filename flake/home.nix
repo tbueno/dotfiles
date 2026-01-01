@@ -2,9 +2,10 @@
 
 {
   imports = [
+    ./development/node.nix
     ./programs/neovim.nix
     ./programs/zsh.nix
-    ./dotfiles.nix
+    ./dotfiles/dotfiles.nix
   ];
 
   # Add neovim to home packages
