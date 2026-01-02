@@ -13,5 +13,13 @@ flakes:
       - name: homeManagerModules.default
         type: home
 packages:
+    - bat
+    - clojure
     - colima
     - docker
+    - git
+    - go
+    - jetbrains-mono
+    - neovim
+    - zsh-syntax-highlighting
+    - zsh-autosuggestions
