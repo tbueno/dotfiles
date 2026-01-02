@@ -1,39 +1,14 @@
 !/bin/bash
 
-# Make sure nix channels are up to date
-nix-channel --add http://nixos.org/channels/nixpkgs-unstable nixpkgs
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
-nix-channel --update
-
+# Set up camp symlink
+mkdir -p ~/.camp
+ln -s $(PWD)/.camp/camp.yml ~/.camp/camp.yml
 ln -s $(PWD)/claude/CLAUDE.md ~/.claude
 
 # Replace the placeholder with the hostname
-sed -i '' "s/__HOSTNAME__/$(scutil --get LocalHostName)/" config/nix-darwin/flake.nix
-sed -i '' "s/__NAME__/$(whoami)/" config/nix-darwin/flake.nix
+# sed -i '' "s/__HOSTNAME__/$(scutil --get LocalHostName)/" config/nix-darwin/flake.nix
+# sed -i '' "s/__NAME__/$(whoami)/" config/nix-darwin/flake.nix
 
-nix --extra-experimental-features nix-command --extra-experimental-features flakes run nix-darwin -- switch --flake ./config/nix-darwin
-. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-darwin-rebuild switch --flake ~/dev/dotfiles/config/nix-darwin
-
-
-echo ">>>>>>>>>>> SYMLINKING DOTFILES <<<<<<<<<<<<<<<"
-
-
-echo ">>>>>>>>>>> Install asdf languages and plugins <<<<<<<<<<<<<<<"
-asdf plugin add golang
-asdf install golang $(cat ./versions/go)
-asdf global golang $(cat ./versions/go)
-asdf plugin add nodejs
-asdf install nodejs $(cat ./versions/nodejs)
-asdf global nodejs $(cat ./versions/nodejs)
-asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
-asdf install rust $(cat ./versions/rust)
-asdf global rust $(cat ./versions/rust)
-
-# Python
-pyenv install $(cat ./versions/python)
-pyenv global $(cat ./versions/python)
-
-# Pyright used for neovim python lsp
-npm i -g pyright
+# nix --extra-experimental-features nix-command --extra-experimental-features flakes run nix-darwin -- switch --flake ./config/nix-darwin
+# . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+# darwin-rebuild switch --flake ~/dev/dotfiles/config/nix-darwin
