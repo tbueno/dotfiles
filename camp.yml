@@ -1,0 +1,17 @@
+env:
+  EDITOR: "nvim"
+flakes:
+   - name: dotfiles
+     url: "path:/Users/bueno/dev/dotfiles/flake"
+     follows:
+       nixpkgs: "nixpkgs"
+     args:
+        email: "tbueno@gmail.com"
+     outputs:
+      - name: darwinModules.default
+        type: system
+      - name: homeManagerModules.default
+        type: home
+packages:
+    - colima
+    - docker
