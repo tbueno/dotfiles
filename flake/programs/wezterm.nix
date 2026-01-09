@@ -5,6 +5,6 @@
     packages = with pkgs; [
       wezterm
     ];
-    file."../dotfiles/.wezterm.lua".source = ./wezterm.lua;
+    file.".wezterm.lua".source = ../dotfiles/wezterm.lua;
   };
 }
