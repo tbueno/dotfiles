@@ -9,10 +9,16 @@
 
     home = { userName, hostName, home, email, ... }: {
       imports = [ ./home.nix ];
+      config._module.args = {
+        inherit userName hostName home email;
+      };
     };
 
     system = { userName, hostName, home, email, ... }: {
       imports = [ ./system.nix ];
+      config._module.args = {
+        inherit userName hostName home email;
+      };
     };
 
   };
