@@ -7,8 +7,13 @@
 
   outputs = { self, nixpkgs }: {
 
-    home = import ./home.nix;
-    system = import ./system.nix;
+    home = { userName, hostName, home, email, ... }: {
+      imports = [ ./home.nix ];
+    };
+
+    system = { userName, hostName, home, email, ... }: {
+      imports = [ ./system.nix ];
+    };
 
   };
 }

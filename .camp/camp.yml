@@ -8,9 +8,9 @@ flakes:
      args:
         email: "tbueno@gmail.com"
      outputs:
-      - name: darwinModules.default
+      - name: system
         type: system
-      - name: homeManagerModules.default
+      - name: home
         type: home
 packages:
     - bat

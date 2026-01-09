@@ -3,7 +3,7 @@
 {
   imports = [
     ./system/macos.nix
-    ./programs/homebrew.nix
+    # ./programs/homebrew.nix
   ];
 
   nix = {
