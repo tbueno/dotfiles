@@ -18,17 +18,16 @@
 
       brews = [
         "pure"
+        "neovim"
       ];
 
       casks = [
         "1password"
-        "chatgpt"
         "google-chrome"
         "dropbox"
         "firefox"
         "obsidian"
         "raycast"
-        "slack"
         "visual-studio-code"
         "wezterm"
       ];

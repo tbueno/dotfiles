@@ -1,25 +1,24 @@
 env:
   EDITOR: "nvim"
 flakes:
-   - name: dotfiles
-     url: "path:/Users/bueno/dev/dotfiles/flake"
-     follows:
-       nixpkgs: "nixpkgs"
-     args:
-        email: "tbueno@gmail.com"
-     outputs:
+  - name: dotfiles
+    url: "path:/Users/bueno/dev/dotfiles/flake"
+    follows:
+      nixpkgs: "nixpkgs"
+    args:
+      email: "tbueno@gmail.com"
+    outputs:
       - name: system
         type: system
       - name: home
         type: home
 packages:
-    - bat
-    - clojure
-    - colima
-    - docker
-    - git
-    - go
-    - jetbrains-mono
-    - neovim
-    - zsh-syntax-highlighting
-    - zsh-autosuggestions
+  - bat
+  - clojure
+  - colima
+  - docker
+  - git
+  - go
+  - jetbrains-mono
+  - zsh-syntax-highlighting
+  - zsh-autosuggestions
