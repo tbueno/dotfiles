@@ -20,8 +20,7 @@
 - YOU MUST NEVER add comments about what used to be there or how something has changed.
 
 ### When implementing a new feature
-- Write unit tests first. Allow the user to review the test cases before proceeding
-- Follow TDD approach and make the tests pass by implementing the code logic
+- When changing or creating a new test, always run it afterwards as validation step. If you find troubles running the test for unrelated reasons, ask me how to proceed
 
 ## Version control
 
