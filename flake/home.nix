@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./programs/git.nix
     ./programs/neovim.nix
     ./programs/wezterm.nix
     ./programs/zsh.nix

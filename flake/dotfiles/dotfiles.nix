@@ -2,6 +2,4 @@
 {
   # Raw configuration files
   home.file.".psqlrc".source = ./psqlrc;
-  home.file.".gitconfig".source = ./gitconfig;
-  home.file.".gitignore_global".source = ./gitignore;
 }
