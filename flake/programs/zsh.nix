@@ -7,6 +7,16 @@
       EDITOR = "nvim";
     };
 
+    initExtra = ''
+      claude-work() {
+        open -n -a "Claude" --args --user-data-dir="$HOME/Library/Application Support/Claude"
+      }
+
+      claude-work-2() {
+        open -n -a "Claude" --args --user-data-dir="$HOME/Library/Application Support/Claude-Work"
+      }
+    '';
+
     shellAliases = {
       cb = "git branch --show-current";
       ls = "ls -la --color";
