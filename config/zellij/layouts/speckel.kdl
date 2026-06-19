@@ -1,0 +1,25 @@
+layout {
+  pane size=1 borderless=true {
+    plugin location="zellij:tab-bar"
+  }
+  pane split_direction="vertical" {
+    pane split_direction="horizontal" {
+      pane split_direction="vertical" {
+        pane command="lazygit"
+        //pane command="bin/rails" {
+        //  args "console"
+        //  start_suspended true
+        //}
+        pane 
+      }
+
+      pane command="nvim"
+    }
+    pane command="claude"{
+      args "--dangerously-skip-permissions"
+    }
+  }
+  pane size=1 borderless=true {
+    plugin location="zellij:status-bar"
+  }
+}
