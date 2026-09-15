@@ -5,8 +5,9 @@ local act = wezterm.action
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+config.front_end = "WebGpu"
 
-config.default_cwd = "~/dev"
+config.default_cwd = wezterm.home_dir .. "/dev"
 
 
 config.scrollback_lines = 5000
