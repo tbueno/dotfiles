@@ -20,5 +20,7 @@ packages:
   - git
   - go
   - jetbrains-mono
+  - lazygit
+  - zellij
   - zsh-syntax-highlighting
   - zsh-autosuggestions
