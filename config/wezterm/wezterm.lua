@@ -26,9 +26,102 @@ config.macos_window_background_blur = 10
 config.window_decorations = "RESIZE"
 
 -- - Tab bar styling
-config.window_frame = {
-	font = wezterm.font({ family = "Noto Sans", weight = "Regular" }),
+-- The tabs are drawn by format-tab-title below, so the frame and the new tab button
+-- have to be colored by hand to match. catppuccin-macchiato, as above.
+local palette = {
+	mantle = "#1e2030",
+	base = "#24273a",
+	surface0 = "#363a4f",
+	surface1 = "#494d64",
+	subtext0 = "#a5adcb",
+	text = "#cad3f5",
+	mauve = "#c6a0f6",
 }
+
+config.window_frame = {
+	font = wezterm.font({ family = "JetBrains Mono", weight = "Regular" }),
+	active_titlebar_bg = palette.mantle,
+	inactive_titlebar_bg = palette.mantle,
+}
+
+config.colors = {
+	tab_bar = {
+		new_tab = { bg_color = palette.mantle, fg_color = palette.subtext0 },
+		new_tab_hover = { bg_color = palette.surface1, fg_color = palette.text },
+	},
+}
+
+-- - Tab titles
+-- Show the working directory rather than the running program, so a window full of
+-- tabs stays readable.
+local tab_colors = {
+	active = { bg = palette.mauve, fg = palette.base },
+	hover = { bg = palette.surface1, fg = palette.text },
+	inactive = { bg = palette.surface0, fg = palette.subtext0 },
+}
+
+local function pane_cwd(pane)
+	local cwd = pane.current_working_dir
+	if not cwd then
+		return nil
+	end
+
+	-- Recent wezterm hands back a Url object; older ones a "file://host/path" string.
+	if type(cwd) == "userdata" then
+		return cwd.file_path
+	end
+	return (tostring(cwd):gsub("^file://[^/]*", ""))
+end
+
+local function basename(path)
+	if not path or path == "" then
+		return nil
+	end
+	if path == wezterm.home_dir or path == wezterm.home_dir .. "/" then
+		return "~"
+	end
+	return path:match("([^/]+)/?$")
+end
+
+local function has_unseen_output(tab)
+	for _, pane in ipairs(tab.panes) do
+		if pane.has_unseen_output then
+			return true
+		end
+	end
+	return false
+end
+
+-- An explicitly set title always wins, so `wezterm cli set-tab-title` keeps working.
+local function tab_title(tab)
+	if tab.tab_title and #tab.tab_title > 0 then
+		return tab.tab_title
+	end
+	return basename(pane_cwd(tab.active_pane)) or tab.active_pane.title
+end
+
+wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
+	local colors = tab_colors.inactive
+	if tab.is_active then
+		colors = tab_colors.active
+	elseif hover then
+		colors = tab_colors.hover
+	end
+
+	local marker = has_unseen_output(tab) and " ●" or ""
+	local prefix = " " .. (tab.tab_index + 1) .. " "
+	-- ● is multi-byte, so reserve its display width rather than its length.
+	local marker_width = marker == "" and 0 or 2
+	local available = math.max(max_width - #prefix - marker_width - 1, 1)
+
+	return {
+		{ Background = { Color = colors.bg } },
+		{ Foreground = { Color = colors.fg } },
+		{ Text = prefix .. wezterm.truncate_right(tab_title(tab), available) .. marker .. " " },
+	}
+end)
+
+config.tab_max_width = 28
 
 -- KEY BINDINGS
 
