@@ -3,6 +3,7 @@
 {
   programs.zsh = {
     enable = true;
+    autosuggestion.enable = true;
     sessionVariables = {
       EDITOR = "nvim";
     };
@@ -32,7 +33,6 @@
         "1password"
         "direnv"
         "git"
-        "zsh-autosuggestions"
       ];
 
       theme = "robbyrussell";

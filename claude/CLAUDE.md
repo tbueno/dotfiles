@@ -27,6 +27,5 @@
 - NEVER commit code on your own. Always ask for permission or review, unless you were asked to commit.
 - NEVER push code to a git repository without explicit permission
 - Do not list the files you changed in the commit message. This is what the diff is for. Describe the context of your changes and the objective of it instead.
-- - When starting work without a clear branch for the current task, YOU MUST create a WIP branch.
 
 
