@@ -1,5 +1,13 @@
 layout {
-    pane command="bash" {
-        args "-c" "exec ${WT_AI_COMMAND:-claude}"
-    }
+  pane size=1 borderless=true {
+    plugin location="zellij:tab-bar"
+  }
+ 
+  pane command="bash" {
+    args "-c" "exec ${WT_AI_COMMAND:-claude}"
+  }
+
+  pane size=1 borderless=true {
+    plugin location="zellij:status-bar"
+  }
 }
