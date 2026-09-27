@@ -21,6 +21,7 @@ packages:
   - go
   - jetbrains-mono
   - lazygit
+  - tuxedo
   - zellij
   - zsh-syntax-highlighting
   - zsh-autosuggestions
