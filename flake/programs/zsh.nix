@@ -8,7 +8,7 @@
       EDITOR = "nvim";
     };
 
-    initExtra = ''
+    initContent = ''
       claude-work() {
         open -n -a "Claude" --args --user-data-dir="$HOME/Library/Application Support/Claude"
       }

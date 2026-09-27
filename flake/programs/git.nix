@@ -3,24 +3,26 @@
 {
   programs.git = {
     enable = true;
-    userName = "Thiago Bueno";
-    userEmail = email;
+    settings = {
+      user = {
+        name = "Thiago Bueno";
+        inherit email;
+      };
 
-    aliases = {
-      st = "status";
-      pom = "push origin master";
-      pr = "pull --rebase";
-      ca = "commit --amend --no-edit";
-      lp = "log -p";
-      d = "diff";
-      ds = "diff --staged";
-      l = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
-      lg = "log --graph --oneline --decorate --color --all";
-      b = "branch";
-      cp = "cherry-pick";
-    };
+      alias = {
+        st = "status";
+        pom = "push origin master";
+        pr = "pull --rebase";
+        ca = "commit --amend --no-edit";
+        lp = "log -p";
+        d = "diff";
+        ds = "diff --staged";
+        l = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+        lg = "log --graph --oneline --decorate --color --all";
+        b = "branch";
+        cp = "cherry-pick";
+      };
 
-    extraConfig = {
       branch.sort = "-committerdate";
 
       color = {
@@ -87,7 +89,5 @@
         autoupdate = true;
       };
     };
-
-
   };
 }
