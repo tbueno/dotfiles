@@ -60,8 +60,9 @@ local tab_colors = {
 	inactive = { bg = palette.surface0, fg = palette.subtext0 },
 }
 
-local function pane_cwd(pane)
-	local cwd = pane.current_working_dir
+-- Takes the raw cwd value: `pane.current_working_dir` off the table handed to
+-- format-tab-title, or `pane:get_current_working_dir()` off a real Pane object.
+local function cwd_path(cwd)
 	if not cwd then
 		return nil
 	end
@@ -97,7 +98,7 @@ local function tab_title(tab)
 	if tab.tab_title and #tab.tab_title > 0 then
 		return tab.tab_title
 	end
-	return basename(pane_cwd(tab.active_pane)) or tab.active_pane.title
+	return basename(cwd_path(tab.active_pane.current_working_dir)) or tab.active_pane.title
 end
 
 wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
@@ -122,6 +123,104 @@ wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
 end)
 
 config.tab_max_width = 28
+
+-- FILE LINKS
+-- Shift-clicking a path opens it in nvim, in a floating pane of the zellij session the
+-- click came from. The rule goes after the defaults so real URLs still match first.
+--
+-- Only absolute and ~-rooted paths are linked. Relative ones are deliberately left
+-- alone: zellij forwards OSC 7 only intermittently, so wezterm's idea of the pane cwd
+-- is stale under it and a relative path would resolve against the wrong directory.
+-- The character before the path is matched but excluded from the link, so that
+-- `src/main.rs` cannot match as `/main.rs`.
+
+config.hyperlink_rules = wezterm.default_hyperlink_rules()
+table.insert(config.hyperlink_rules, {
+	regex = [[(?:^|[^\w.\-~/])((?:~)?(?:/[\w.\-]+)+(?::\d+)?(?::\d+)?)]],
+	format = "edit:$1",
+	highlight = 1,
+})
+
+local function expand_home(path)
+	if path:sub(1, 1) == "~" then
+		return wezterm.home_dir .. path:sub(2)
+	end
+	return path
+end
+
+-- Zellij always prefixes the terminal title with its session name, so the title is the
+-- only place the wezterm pane -> zellij session mapping is available.
+local function zellij_session(pane)
+	return pane:get_title():match("^Zellij %((.-)%)")
+end
+
+local function shell_quote(str)
+	return "'" .. str:gsub("'", [['\'']]) .. "'"
+end
+
+-- Zellij places a floating pane by its top-left corner, so centering one means
+-- insetting it by half of whatever the size leaves over.
+local float_size = 70
+local float_inset = (100 - float_size) / 2
+local float_geometry = string.format(
+	"--floating --width %d%% --height %d%% -x %d%% -y %d%%",
+	float_size,
+	float_size,
+	float_inset,
+	float_inset
+)
+
+local function file_exists(path)
+	local handle = io.open(path, "r")
+	if not handle then
+		return false
+	end
+	handle:close()
+	return true
+end
+
+wezterm.on("open-uri", function(_, pane, uri)
+	local target = uri:match("^edit:(.+)$")
+	if not target then
+		-- A real URL: let wezterm hand it to the default opener.
+		return true
+	end
+
+	-- Only handled inside zellij; a click anywhere else is a no-op.
+	local session = zellij_session(pane)
+	if not session then
+		return false
+	end
+
+	local path, line = target:match("^(.-):(%d+)")
+	path = expand_home(path or target)
+
+	-- A match that isn't a real file is a no-op rather than a stray editor pane.
+	if not file_exists(path) then
+		return false
+	end
+
+	local editor = "nvim"
+	if line then
+		editor = editor .. " +" .. line
+	end
+	editor = editor .. " " .. shell_quote(path)
+
+	-- wezterm.app is launched from the Dock, so it inherits a bare PATH rather than the
+	-- shell's. Going through a login shell finds nvim and zellij wherever they live, and
+	-- gives nvim a real PATH for its own subprocesses.
+	wezterm.background_child_process({
+		"/bin/zsh",
+		"-lc",
+		"zellij --session "
+			.. shell_quote(session)
+			.. " action new-pane --close-on-exit "
+			.. float_geometry
+			.. " -- "
+			.. editor,
+	})
+	return false
+end)
 
 -- KEY BINDINGS
 
