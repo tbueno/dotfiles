@@ -1,4 +1,5 @@
 .DS_Store
+.zsh_history
 zsh/history
 *.swp
 zsh/history

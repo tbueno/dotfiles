@@ -3,6 +3,14 @@
 {
   programs.git = {
     enable = true;
+
+    includes = [
+      {
+        condition = "gitdir:${config.home.homeDirectory}/dev/personal/";
+        path = "${config.home.homeDirectory}/.gitconfig-personal";
+      }
+    ];
+
     settings = {
       user = {
         name = "Thiago Bueno";
@@ -57,7 +65,7 @@
 
       core = {
         editor = "nvim";
-        excludesFile = "~/.gitignore_global";
+        excludesFile = "/Users/bueno/.gitignore_global";
       };
 
       diff = {

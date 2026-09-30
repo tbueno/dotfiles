@@ -38,4 +38,5 @@ The repository uses a nested flake structure:
 - `flake/profiles/*.nix` - Optional profile-specific settings (e.g., work environment)
 
 **Raw Dotfiles:**
-- `flake/dotfiles/` - Contains actual config files (gitconfig, psqlrc, wezterm.lua) that get symlinked to `$HOME`
+- `flake/dotfiles/` - Contains actual config files (gitconfig, psqlrc) that get symlinked to `$HOME`
+- `config/wezterm/wezterm.lua` - Linked to `~/.wezterm.lua` via `mkOutOfStoreSymlink`, so edits apply without a rebuild

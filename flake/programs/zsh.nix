@@ -6,6 +6,7 @@
     autosuggestion.enable = true;
     sessionVariables = {
       EDITOR = "nvim";
+      ASDF_DATA_DIR = "$HOME/.asdf";
     };
 
     initContent = ''
