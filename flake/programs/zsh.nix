@@ -24,6 +24,7 @@
       ls = "ls -la --color";
       reload = "exec zsh";
       cat = "bat";
+      todo = "zellij run --floating --close-on-exit --name todo --width 70% --height 70% -x 15% -y 15% -- tuxedo ~/dev/todo.txt";
     };
 
     oh-my-zsh = {

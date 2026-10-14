@@ -24,7 +24,6 @@
 
       casks = [
         "1password"
-        "google-chrome"
         "dropbox"
         "firefox"
         "obsidian"
