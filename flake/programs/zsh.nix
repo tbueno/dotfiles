@@ -25,6 +25,7 @@
       reload = "exec zsh";
       cat = "bat";
       todo = "zellij run --floating --close-on-exit --name todo --width 70% --height 70% -x 15% -y 15% -- tuxedo ~/dev/todo.txt";
+      lg = "zellij run --floating --close-on-exit --name lg --width 70% --height 70% -x 15% -y 15% -- lazygit";
     };
 
     oh-my-zsh = {
