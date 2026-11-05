@@ -23,12 +23,10 @@
       ];
 
       casks = [
-        "1password"
         "dropbox"
         "firefox"
         "obsidian"
         "raycast"
-        "visual-studio-code"
         "wezterm"
       ];
     };
