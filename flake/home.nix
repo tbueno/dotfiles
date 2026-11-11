@@ -1,9 +1,11 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./programs/claude-zellij-whip.nix
     ./programs/git.nix
     ./programs/neovim.nix
     ./programs/wezterm.nix
+    ./programs/zellij.nix
     ./programs/zsh.nix
     ./dotfiles/dotfiles.nix
   ];

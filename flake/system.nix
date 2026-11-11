@@ -4,6 +4,7 @@
   imports = [
     ./system/macos.nix
     ./system/homebrew.nix
+    ./system/zellij-whip.nix
   ];
 
   nix = {
